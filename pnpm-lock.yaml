@@ -1,35 +1,35 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@remix-run/dev': ^1.2.3
-  '@remix-run/eslint-config': ^1.2.3
+  '@remix-run/dev': 1.3.2
+  '@remix-run/eslint-config': 1.3.2
   '@remix-run/react': ^1.2.3
-  '@remix-run/serve': ^1.2.3
+  '@remix-run/serve': 1.3.2
   '@remix-run/vercel': ^1.2.3
-  '@rollup/plugin-typescript': ^8.3.1
-  '@types/react': ^17.0.24
-  '@types/react-dom': ^17.0.9
+  '@rollup/plugin-typescript': 8.3.1
+  '@types/react': 17.0.41
+  '@types/react-dom': 17.0.14
   clsx: ^1.1.1
-  cross-env: ^7.0.3
-  eslint: ^8.9.0
-  eslint-config-prettier: ^8.5.0
-  husky: ^7.0.4
-  lint-staged: ^12.3.6
-  m3-tokens: ^0.0.3
-  npm-run-all: ^4.1.5
-  prettier: ^2.6.0
-  prettier-plugin-tailwindcss: ^0.1.8
+  cross-env: 7.0.3
+  eslint: 8.11.0
+  eslint-config-prettier: 8.5.0
+  husky: 7.0.4
+  lint-staged: 12.3.7
+  m3-tokens: 0.0.3
+  npm-run-all: 4.1.5
+  prettier: 2.6.0
+  prettier-plugin-tailwindcss: 0.1.8
   react: ^17.0.2
   react-dom: ^17.0.2
   react-icons: ^4.3.1
   react-use: ^17.3.2
   remix: ^1.2.3
   remix-utils: ^2.9.0
-  rimraf: ^3.0.2
-  rollup: ^2.70.1
-  rollup-plugin-dts: ^4.2.0
-  tailwindcss: ^3.0.23
-  typescript: ^4.6.2
+  rimraf: 3.0.2
+  rollup: 2.70.1
+  rollup-plugin-dts: 4.2.0
+  tailwindcss: 3.0.23
+  typescript: 4.6.2
 
 dependencies:
   '@remix-run/react': 1.3.1_react-dom@17.0.2+react@17.0.2
@@ -43,17 +43,17 @@ dependencies:
   remix-utils: 2.9.0_375a494ccf352ac5fb8cdd0526d9791a
 
 devDependencies:
-  '@remix-run/dev': 1.3.1_react-dom@17.0.2+react@17.0.2
-  '@remix-run/eslint-config': 1.3.1_4b989de8ecf9bda244bc13eda9a76581
-  '@remix-run/serve': 1.3.1_react-dom@17.0.2+react@17.0.2
+  '@remix-run/dev': 1.3.2_react-dom@17.0.2+react@17.0.2
+  '@remix-run/eslint-config': 1.3.2_4b989de8ecf9bda244bc13eda9a76581
+  '@remix-run/serve': 1.3.2_react-dom@17.0.2+react@17.0.2
   '@rollup/plugin-typescript': 8.3.1_rollup@2.70.1+typescript@4.6.2
-  '@types/react': 17.0.40
-  '@types/react-dom': 17.0.13
+  '@types/react': 17.0.41
+  '@types/react-dom': 17.0.14
   cross-env: 7.0.3
   eslint: 8.11.0
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   husky: 7.0.4
-  lint-staged: 12.3.6
+  lint-staged: 12.3.7
   m3-tokens: 0.0.3
   npm-run-all: 4.1.5
   prettier: 2.6.0
@@ -480,12 +480,12 @@ packages:
       rimraf: 3.0.2
     dev: true
 
-  /@remix-run/dev/1.3.1_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-FETx2UBl3nT6ISyECMuhuv+WVEgG2w1XGzOE4g1xMPH3mxWEfZcS87+/4hVCl+i796I7p+46jVD7ItQ2dXjVYQ==}
+  /@remix-run/dev/1.3.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-oRDdRRLpWKRIh3MdOOjdpQuuPppvfrp1+ZJEbv4C5uo9vJ/URawftnPnA0DT/M8MDpdHyxcV6IFyVc5M4G59kg==}
     hasBin: true
     dependencies:
       '@esbuild-plugins/node-modules-polyfill': 0.1.4_esbuild@0.14.22
-      '@remix-run/server-runtime': 1.3.1_react-dom@17.0.2+react@17.0.2
+      '@remix-run/server-runtime': 1.3.2_react-dom@17.0.2+react@17.0.2
       cacache: 15.3.0
       chalk: 4.1.2
       chalk-animation: 1.6.0
@@ -520,8 +520,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@remix-run/eslint-config/1.3.1_4b989de8ecf9bda244bc13eda9a76581:
-    resolution: {integrity: sha512-VBjFZJGJ1q2kpFxnN76fj6l3ChakzEBx0wkdfkvT7oMp3Qi5KezuTzpWRNHVeuzY2afafN10M86tbog/kEq47w==}
+  /@remix-run/eslint-config/1.3.2_4b989de8ecf9bda244bc13eda9a76581:
+    resolution: {integrity: sha512-OLQ7qGKMLSukjOpZQp0BD2xYTkgQl6Dnrq4NeZqkVLsKFL52azm0tQo0cye44fph3Ik7YXIFgt2L2fn7TIn1Ew==}
     peerDependencies:
       eslint: '>=8.1.0'
       react: '>=17.0.0'
@@ -556,13 +556,13 @@ packages:
       - supports-color
     dev: true
 
-  /@remix-run/express/1.3.1_466ebc0d4851fc8110767791966a48f3:
-    resolution: {integrity: sha512-fFH0xmtLWs0rrMkSIw/wOrWxDT50C+bXx49L02RLmJwFGRlMfXDqL92uvuYq5bQO+lZGLoI6oqsSxdWk6ovyhw==}
+  /@remix-run/express/1.3.2_466ebc0d4851fc8110767791966a48f3:
+    resolution: {integrity: sha512-HlZX9Aoj0QinUvH82m0VgxVQWsly/FQifstnxzem6gOiS+fTk9MDiTTj1N7vhQre1Pa6CxuyGpnfHIkiXBBi2g==}
     peerDependencies:
       express: ^4.17.1
     dependencies:
-      '@remix-run/node': 1.3.1_react-dom@17.0.2+react@17.0.2
-      '@remix-run/server-runtime': 1.3.1_react-dom@17.0.2+react@17.0.2
+      '@remix-run/node': 1.3.2_react-dom@17.0.2+react@17.0.2
+      '@remix-run/server-runtime': 1.3.2_react-dom@17.0.2+react@17.0.2
       express: 4.17.3
     transitivePeerDependencies:
       - encoding
@@ -588,6 +588,27 @@ packages:
       - encoding
       - react
       - react-dom
+    dev: false
+
+  /@remix-run/node/1.3.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-a9ia3byEnqV9llW681tUJY6M2YjkUevcJ84QJFJPqlHzEYereb2X41xexxtUpW5ghAlkGsxAe8LguyCptRZZvQ==}
+    dependencies:
+      '@remix-run/server-runtime': 1.3.2_react-dom@17.0.2+react@17.0.2
+      '@types/busboy': 0.3.2
+      '@types/node-fetch': 2.6.1
+      '@web-std/file': 3.0.2
+      abort-controller: 3.0.0
+      blob-stream: 0.1.3
+      busboy: 0.3.1
+      cookie-signature: 1.2.0
+      form-data: 4.0.0
+      node-fetch: 2.6.7
+      source-map-support: 0.5.21
+    transitivePeerDependencies:
+      - encoding
+      - react
+      - react-dom
+    dev: true
 
   /@remix-run/react/1.3.1_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-PRtO7BWEdBcOou2TegfEwUkouvMkY57uH/nQy6Gwz/Sg7geiEsInX9yo9XmyBKqyc5pe5BEnTija8z/av3g8qg==}
@@ -601,11 +622,11 @@ packages:
       react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
     dev: false
 
-  /@remix-run/serve/1.3.1_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-NuMwUF2+Ds9csK9arDAFMAzv69eb5S303PRhWq60JrFogtN/dUdaIZf79C2z1z7uKmI29TIoMeTVE/8IFPWHsw==}
+  /@remix-run/serve/1.3.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-PLxuG/6Tx7vGjeL5LeRwZj4hCCvTS9q41iGQY1nfALU5RlxAHgfh3SzmRiHeQXXssAvFjUuKAhzSHM22pc5Ulg==}
     hasBin: true
     dependencies:
-      '@remix-run/express': 1.3.1_466ebc0d4851fc8110767791966a48f3
+      '@remix-run/express': 1.3.2_466ebc0d4851fc8110767791966a48f3
       compression: 1.7.4
       express: 4.17.3
       morgan: 1.10.0
@@ -629,6 +650,23 @@ packages:
       react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
       set-cookie-parser: 2.4.8
       source-map: 0.7.3
+    dev: false
+
+  /@remix-run/server-runtime/1.3.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-WeO0+5EDEXtHZKgrueLVVdbFULhiPByF0HdaetpTzQbNhGnNcztQu8SQZ9PEFQqrTcYcT+UN0+H/UyCUUyie1A==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@types/cookie': 0.4.1
+      cookie: 0.4.2
+      jsesc: 3.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
+      set-cookie-parser: 2.4.8
+      source-map: 0.7.3
+    dev: true
 
   /@remix-run/vercel/1.3.1_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-pone5+jow6HKnR5lmuUl8LSHrY6DSt3PTeHGReMJHZmrbZFiTaG1OadxVqBE+HEXnxzYaAhSKnAkmIeE9hfJag==}
@@ -844,14 +882,14 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
     dev: true
 
-  /@types/react-dom/17.0.13:
-    resolution: {integrity: sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ==}
+  /@types/react-dom/17.0.14:
+    resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
     dependencies:
-      '@types/react': 17.0.40
+      '@types/react': 17.0.41
     dev: true
 
-  /@types/react/17.0.40:
-    resolution: {integrity: sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==}
+  /@types/react/17.0.41:
+    resolution: {integrity: sha512-chYZ9ogWUodyC7VUTRBfblysKLjnohhFY9bGLwvnUFFy48+vB9DikmB3lW0qTFmBcKSzmdglcvkHK71IioOlDA==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -3604,8 +3642,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.3.6:
-    resolution: {integrity: sha512-tVNyl/HsAnplKh4oaoRNzyZLm0PE/6VaBUXvd/gA9zhYCC/+ivZwiwpoT6jOxcLzuIOjP19wW+mfOi7/Bw4c1A==}
+  /lint-staged/12.3.7:
+    resolution: {integrity: sha512-/S4D726e2GIsDVWIk1XGvheCaDm1SJRQp8efamZFWJxQMVEbOwSysp7xb49Oo73KYCdy97mIWinhlxcoNqIfIQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
