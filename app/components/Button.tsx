@@ -1,6 +1,11 @@
 import clsx from 'clsx'
 import { ComponentPropsWithoutRef } from 'react'
 import { IconType } from 'react-icons'
+import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
+import useDarkMode from 'use-dark-mode'
+
+import { __IS_SERVER__ } from '~/env'
+import { useAfterMount } from '~/hooks'
 
 import { StateLayer } from './StateLayer'
 
@@ -68,4 +73,21 @@ export const IconButton: React.FC<IconButtonProps> = ({
   ...restProps
 }) => {
   return <Button className={className} variant="icon" {...restProps} />
+}
+
+export const ColorScheme: React.FC = () => {
+  const { value, toggle } = useDarkMode(false, {
+    classNameDark: 'dark',
+    classNameLight: 'light',
+    element: __IS_SERVER__ ? undefined : document.documentElement,
+  })
+
+  console.log(value)
+
+  return useAfterMount(
+    <IconButton
+      Icon={value ? MdOutlineDarkMode : MdOutlineLightMode}
+      onClick={toggle}
+    />,
+  )
 }
