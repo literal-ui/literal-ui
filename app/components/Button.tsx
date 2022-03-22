@@ -2,10 +2,8 @@ import clsx from 'clsx'
 import { ComponentPropsWithoutRef } from 'react'
 import { IconType } from 'react-icons'
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
-import useDarkMode from 'use-dark-mode'
 
-import { __IS_SERVER__ } from '~/env'
-import { useAfterMount } from '~/hooks'
+import { useColorScheme } from '~/hooks'
 
 import { StateLayer } from './StateLayer'
 
@@ -57,7 +55,11 @@ export const Button: React.FC<ButtonProps> = ({
     >
       {disabled || <StateLayer />}
       {Icon ? (
-        <Icon size={isIcon ? 24 : 18} className={clsx(isIcon || 'mr-2')} />
+        <Icon
+          size={isIcon ? 24 : 18}
+          className={clsx(isIcon || 'mr-2')}
+          key={Icon.name}
+        />
       ) : null}
       {children}
     </button>
@@ -68,26 +70,25 @@ export interface IconButtonProps extends ComponentPropsWithoutRef<'button'> {
   Icon?: IconType
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({
-  className,
-  ...restProps
-}) => {
-  return <Button className={className} variant="icon" {...restProps} />
+export const IconButton: React.FC<IconButtonProps> = (props) => {
+  return <Button variant="icon" {...props} />
 }
 
 export const ColorScheme: React.FC = () => {
-  const { value, toggle } = useDarkMode(false, {
-    classNameDark: 'dark',
-    classNameLight: 'light',
-    element: __IS_SERVER__ ? undefined : document.documentElement,
-  })
+  const { toggle } = useColorScheme()
 
-  console.log(value)
-
-  return useAfterMount(
-    <IconButton
-      Icon={value ? MdOutlineDarkMode : MdOutlineLightMode}
-      onClick={toggle}
-    />,
+  return (
+    <>
+      <IconButton
+        Icon={MdOutlineDarkMode}
+        onClick={toggle}
+        className="hidden dark:flex"
+      />
+      <IconButton
+        Icon={MdOutlineLightMode}
+        onClick={toggle}
+        className="dark:hidden"
+      />
+    </>
   )
 }

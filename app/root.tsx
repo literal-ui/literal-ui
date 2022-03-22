@@ -9,6 +9,7 @@ import {
 } from 'remix'
 import type { MetaFunction } from 'remix'
 
+import { PreventFlash } from './components'
 import styles from './tailwind.css'
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
@@ -31,6 +32,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <PreventFlash />
       </body>
     </html>
   )
