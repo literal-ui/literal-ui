@@ -1,6 +1,6 @@
 {
   "name": "literal-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "license": "MIT",
   "author": "pacexy",
@@ -15,7 +15,6 @@
     "dev:remix": "cross-env NODE_ENV=development remix dev",
     "generate:css": "npx tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css",
     "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore .",
-    "postinstall": "remix setup node",
     "prepare": "husky install"
   },
   "files": [
