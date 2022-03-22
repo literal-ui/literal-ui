@@ -1,6 +1,6 @@
 {
   "name": "literal-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "license": "MIT",
   "author": "pacexy",
@@ -20,14 +20,14 @@
   },
   "files": [
     "dist",
-    "app/tailwind.css"
+    "plugin.js"
   ],
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
     },
-    "./tailwind.css": "./app/tailwind.css"
+    "./tailwind": "./plugin.js"
   },
   "types": "./dist/index.d.ts",
   "lint-staged": {

@@ -3,5 +3,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('m3-tokens/tailwind')],
+  plugins: [require('m3-tokens/tailwind'), require('./plugin')],
 }
