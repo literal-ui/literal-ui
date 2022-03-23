@@ -1,0 +1,16 @@
+{
+  "name": "@literal-ui/hooks",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "devDependencies": {
+    "@literal-ui/tsconfig": "workspace:*",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "use-local-storage-state": "^16.0.1"
+  }
+}

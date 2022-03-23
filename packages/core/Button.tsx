@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react'
 import { IconType } from 'react-icons'
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
 
-import { useColorScheme } from '~/hooks'
+import { useColorScheme } from '@literal-ui/hooks'
 
 import { StateLayer } from './StateLayer'
 

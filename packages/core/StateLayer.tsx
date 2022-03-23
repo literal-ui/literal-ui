@@ -8,7 +8,7 @@ export const StateLayer: React.FC = () => {
     <span ref={ref}>
       <span
         className={clsx(
-          'absolute inset-0 bg-current opacity-0 hover:opacity-hover active:opacity-pressed',
+          'hover:opacity-hover active:opacity-pressed absolute inset-0 bg-current opacity-0',
         )}
         // https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
         onMouseDown={(e) => {
