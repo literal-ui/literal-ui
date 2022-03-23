@@ -7,8 +7,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('m3-tokens/tailwind')({ source: '#00ff00' }),
-    require('literal-ui/tailwind'),
-  ],
+  plugins: [require('m3-tokens/tailwind')({ source: '#00ff00' })],
 }
