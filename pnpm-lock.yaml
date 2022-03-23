@@ -28,7 +28,7 @@ importers:
       turbo: 1.1.9
       typescript: 4.6.2
 
-  apps/docs:
+  docs:
     specifiers:
       '@literal-ui/core': workspace:*
       '@literal-ui/hooks': workspace:*
@@ -44,13 +44,13 @@ importers:
       react-dom: 17.0.2
       tailwindcss: ^3.0.23
     dependencies:
-      '@literal-ui/core': link:../../packages/core
-      '@literal-ui/hooks': link:../../packages/hooks
+      '@literal-ui/core': link:../packages/core
+      '@literal-ui/hooks': link:../packages/hooks
       next: 12.0.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
-      '@literal-ui/tsconfig': link:../../packages/tsconfig
+      '@literal-ui/tsconfig': link:../packages/tsconfig
       '@types/node': 17.0.22
       '@types/react': 17.0.37
       autoprefixer: 10.4.4_postcss@8.4.12
@@ -66,13 +66,11 @@ importers:
       '@types/react': ^17.0.37
       '@types/react-dom': ^17.0.11
       clsx: ^1.1.1
-      hooks: ^0.3.2
       react: 17.0.2
       react-icons: ^4.3.1
     dependencies:
       '@literal-ui/hooks': link:../hooks
       clsx: 1.1.1
-      hooks: 0.3.2
       react: 17.0.2
       react-icons: 4.3.1_react@17.0.2
     devDependencies:
@@ -1573,11 +1571,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
-
-  /hooks/0.3.2:
-    resolution: {integrity: sha1-ox8GDCAmzqbPHKPrF4Qw5xjhxKM=}
-    engines: {node: '>=0.4.0'}
-    dev: false
 
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
