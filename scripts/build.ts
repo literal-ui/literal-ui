@@ -1,0 +1,37 @@
+#!/usr/bin/env node -r esbuild-register
+
+import typescript from '@rollup/plugin-typescript'
+import { defineConfig, rollup } from 'rollup'
+import dts from 'rollup-plugin-dts'
+
+const opts = defineConfig([
+  {
+    input: 'src/index.ts',
+    output: [
+      { file: 'dist/index.mjs', format: 'esm' },
+      { file: 'dist/index.js', format: 'cjs' },
+    ],
+    plugins: [typescript()],
+  },
+  {
+    input: 'src/index.ts',
+    output: { file: 'dist/index.d.ts' },
+    plugins: [dts()],
+  },
+])
+
+async function main() {
+  await Promise.all(
+    opts.map(async (opt) => {
+      const bundle = await rollup(opt)
+      const outputOpts = Array.isArray(opt.output) ? opt.output : [opt.output]
+      await Promise.all(outputOpts.map(bundle.write))
+      await bundle.close()
+    }),
+  )
+}
+
+main().catch((e) => {
+  console.error(e)
+  process.exit(1)
+})
