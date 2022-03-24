@@ -1,5 +1,3 @@
-#!/usr/bin/env node -r esbuild-register
-
 import typescript from '@rollup/plugin-typescript'
 import { defineConfig, rollup } from 'rollup'
 import dts from 'rollup-plugin-dts'
@@ -9,7 +7,7 @@ const opts = defineConfig([
     input: 'src/index.ts',
     output: [
       { file: 'dist/index.mjs', format: 'esm' },
-      { file: 'dist/index.js', format: 'cjs' },
+      { file: 'dist/index.js', format: 'cjs', exports: 'auto' },
     ],
     plugins: [typescript()],
   },
@@ -25,6 +23,7 @@ async function main() {
     opts.map(async (opt) => {
       const bundle = await rollup(opt)
       const outputOpts = Array.isArray(opt.output) ? opt.output : [opt.output]
+      // @ts-ignore
       await Promise.all(outputOpts.map(bundle.write))
       await bundle.close()
     }),

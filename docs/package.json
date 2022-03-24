@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "@literal-ui/plugins": "workspace:*",
-    "@literal-ui/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "17.0.37",
     "autoprefixer": "^10.4.4",
