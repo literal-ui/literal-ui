@@ -2,17 +2,15 @@
   "name": "@literal-ui/plugins",
   "version": "0.0.1",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "esmo ../../scripts/build.ts"
-  },
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
   },
   "files": [
     "dist"
   ],
-  "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/tailwindcss": "^3.0.9"
   },

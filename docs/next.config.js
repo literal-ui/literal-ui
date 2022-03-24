@@ -1,7 +1,4 @@
-const withTM = require('next-transpile-modules')([
-  '@literal-ui/core',
-  '@literal-ui/hooks',
-])
+const withTM = require('next-transpile-modules')([])
 
 /**
  * @type {import('next').NextConfig}
