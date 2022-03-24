@@ -1,0 +1,21 @@
+{
+  "name": "@literal-ui/plugins",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "build"
+  },
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "@literal-ui/scripts": "workspace:*",
+    "@literal-ui/tsconfig": "workspace:*",
+    "@types/tailwindcss": "^3.0.9"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
