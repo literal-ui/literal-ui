@@ -9,6 +9,9 @@
     "import": "./dist/index.mjs",
     "require": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/react": "^17.0.37",
