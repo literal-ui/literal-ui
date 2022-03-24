@@ -17,7 +17,7 @@
   "devDependencies": {
     "@literal-ui/plugins": "workspace:*",
     "@types/node": "^17.0.12",
-    "@types/react": "17.0.37",
+    "@types/react": "17.0.42",
     "autoprefixer": "^10.4.4",
     "m3-tokens": "^0.0.3",
     "next-transpile-modules": "9.0.0",
