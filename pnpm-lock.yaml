@@ -48,7 +48,7 @@ importers:
       '@literal-ui/hooks': workspace:*
       '@literal-ui/plugins': workspace:*
       '@types/node': ^17.0.12
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       autoprefixer: ^10.4.4
       m3-tokens: ^0.0.3
       next: 12.1.0
@@ -66,7 +66,7 @@ importers:
     devDependencies:
       '@literal-ui/plugins': link:../packages/plugins
       '@types/node': 17.0.22
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       autoprefixer: 10.4.4_postcss@8.4.12
       m3-tokens: 0.0.3
       next-transpile-modules: 9.0.0
@@ -594,8 +594,8 @@ packages:
       csstype: 3.0.11
     dev: true
 
-  /@types/react/17.0.42:
-    resolution: {integrity: sha512-nuab3x3CpJ7VFeNA+3HTUuEkvClYHXqWtWd7Ud6AZYW7Z3NH9WKtgU+tFB0ZLcHq+niB/HnzLcaZPqMJ95+k5Q==}
+  /@types/react/17.0.43:
+    resolution: {integrity: sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
