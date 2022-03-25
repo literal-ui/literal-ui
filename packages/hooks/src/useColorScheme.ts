@@ -1,29 +1,26 @@
 import { useCallback, useEffect } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
+import { useMediaQuery } from './useMediaQuery'
+
 type TColorScheme = 'light' | 'dark'
 
-export function useColorScheme(defaultValue: TColorScheme = 'light') {
-  const [scheme, setScheme] = useLocalStorageState('literal-color-scheme', {
-    ssr: true,
-    defaultValue,
-  })
-  const dark = scheme === 'dark'
+export function useColorScheme() {
+  const [scheme, setScheme] = useLocalStorageState<TColorScheme>(
+    'literal-color-scheme',
+    { ssr: true },
+  )
+
+  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')
+  const dark = scheme === 'dark' || (!scheme && prefersDark)
 
   const toggle = useCallback(() => {
-    setScheme((s) => (s === 'dark' ? 'light' : 'dark'))
-  }, [setScheme])
+    setScheme(dark ? 'light' : 'dark')
+  }, [dark, setScheme])
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
   }, [dark])
-
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleChange = () => setScheme(mql.matches ? 'dark' : 'light')
-    mql.addEventListener('change', handleChange)
-    return () => mql.removeEventListener('change', handleChange)
-  }, [setScheme, toggle])
 
   return { scheme, toggle }
 }
