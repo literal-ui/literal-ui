@@ -1,3 +1,4 @@
+export * from './useBoolean'
 export * from './useColorScheme'
 export * from './useEventListener'
 export * from './useMediaQuery'

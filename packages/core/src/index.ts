@@ -1,3 +1,7 @@
 export * from './Button'
+export * from './NavigationDrawer'
+export * from './Overlay'
 export * from './PreventFlash'
+export * from './Provider'
 export * from './StateLayer'
+export * from './TopAppBar'
