@@ -1,4 +1,8 @@
-const withTM = require('next-transpile-modules')([])
+const withTM = require('next-transpile-modules')([
+  '../packages/core',
+  '../packages/hooks',
+  '../packages/plugins',
+])
 
 /**
  * @type {import('next').NextConfig}

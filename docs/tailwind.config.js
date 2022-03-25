@@ -1,14 +1,11 @@
 module.exports = {
   darkMode: 'class',
-  content: [
-    './pages/**/*.{tsx,ts}',
-    './node_modules/@literal-ui/core/dist/**/*.js',
-  ],
+  content: ['./pages/**/*.{tsx,ts}', '../packages/core/src/**/*.{tsx,ts}'],
   theme: {
     extend: {},
   },
   plugins: [
     require('m3-tokens/tailwind')({ source: '#00ff00' }),
-    require('@literal-ui/plugins'),
+    require('../packages/plugins'),
   ],
 }

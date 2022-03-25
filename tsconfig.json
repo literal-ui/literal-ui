@@ -15,7 +15,13 @@
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@literal-ui/core": ["./packages/core/src/index.ts"],
+      "@literal-ui/hooks": ["./packages/hooks/src/index.ts"],
+      "@literal-ui/plugins": ["./packages/plugins/src/index.ts"]
+    }
   },
   "exclude": ["node_modules"]
 }
