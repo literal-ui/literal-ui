@@ -1,9 +1,6 @@
 import clsx from 'clsx'
 import { ElementType } from 'react'
 import { IconType } from 'react-icons'
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
-
-import { useColorScheme } from '@literal-ui/hooks'
 
 import { StateLayer } from './StateLayer'
 import { WithRenderAs } from './types'
@@ -81,24 +78,5 @@ export function IconButton<T extends ElementType = 'button'>({
       {disabled || <StateLayer />}
       {Icon ? <Icon size={24} /> : null}
     </Renderer>
-  )
-}
-
-export const ColorScheme: React.FC = () => {
-  const { toggle } = useColorScheme()
-
-  return (
-    <>
-      <IconButton
-        Icon={MdOutlineDarkMode}
-        onClick={toggle}
-        className="hidden dark:flex"
-      />
-      <IconButton
-        Icon={MdOutlineLightMode}
-        onClick={toggle}
-        className="dark:hidden"
-      />
-    </>
   )
 }
