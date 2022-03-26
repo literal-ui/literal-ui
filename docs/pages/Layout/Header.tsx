@@ -9,15 +9,19 @@ import {
 
 export const Header: React.FC = () => {
   return (
-    <TopAppBar>
-      <TopAppBar.Leading>
-        <NavigationDrawerToggler />
-      </TopAppBar.Leading>
-      <TopAppBar.Title>Literal UI</TopAppBar.Title>
-      <TopAppBar.Trailing>
-        <IconButton Icon={RiGithubFill} />
-        <ColorScheme />
-      </TopAppBar.Trailing>
-    </TopAppBar>
+    <TopAppBar
+      leading={
+        <TopAppBar.Leading>
+          <NavigationDrawerToggler />
+        </TopAppBar.Leading>
+      }
+      headline={<TopAppBar.Title>Literal UI</TopAppBar.Title>}
+      trailing={
+        <TopAppBar.Trailing>
+          <IconButton Icon={RiGithubFill} />
+          <ColorScheme />
+        </TopAppBar.Trailing>
+      }
+    />
   )
 }

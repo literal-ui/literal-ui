@@ -1,12 +1,16 @@
 import clsx from 'clsx'
 import { ComponentPropsWithoutRef } from 'react'
 
-interface TopAppBarProps extends ComponentPropsWithoutRef<'header'> {}
+interface TopAppBarProps extends ComponentPropsWithoutRef<'header'> {
+  leading?: React.ReactNode
+  headline?: React.ReactNode
+  trailing?: React.ReactNode
+}
 export const TopAppBar: React.FC<TopAppBarProps> & {
   Leading: React.FC<LeadingProps>
   Title: React.FC<TitleProps>
   Trailing: React.FC<TrailingProps>
-} = ({ className, ...props }) => {
+} = ({ className, leading, headline, trailing, ...props }) => {
   return (
     <header
       className={clsx(
@@ -14,7 +18,13 @@ export const TopAppBar: React.FC<TopAppBarProps> & {
         className,
       )}
       {...props}
-    />
+    >
+      <div className="flex items-center gap-4">
+        {leading}
+        {headline}
+      </div>
+      {trailing}
+    </header>
   )
 }
 
