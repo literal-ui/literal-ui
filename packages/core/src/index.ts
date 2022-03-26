@@ -1,4 +1,5 @@
 export * from './Button'
+export * from './Chip'
 export * from './NavigationBar'
 export * from './NavigationDrawer'
 export * from './Overlay'
