@@ -7,6 +7,8 @@ import {
   TopAppBar,
 } from '@literal-ui/core'
 
+import { Link } from './Link'
+
 export const Header: React.FC = () => {
   return (
     <TopAppBar
@@ -18,7 +20,11 @@ export const Header: React.FC = () => {
       headline={<TopAppBar.Title>Literal UI</TopAppBar.Title>}
       trailing={
         <TopAppBar.Trailing>
-          <IconButton Icon={RiGithubFill} />
+          <IconButton
+            renderAs={Link}
+            href="https://github.com/literal-ui/literal-ui"
+            Icon={RiGithubFill}
+          />
           <ColorScheme />
         </TopAppBar.Trailing>
       }

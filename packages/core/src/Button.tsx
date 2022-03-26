@@ -1,18 +1,12 @@
 import clsx from 'clsx'
-import { ComponentPropsWithoutRef } from 'react'
+import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
 
 import { useColorScheme } from '@literal-ui/hooks'
 
 import { StateLayer } from './StateLayer'
-
-type Variant = keyof typeof variantMap
-
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
-  variant: Variant
-  Icon?: IconType
-}
+import { WithRenderAs } from './types'
 
 const variantMap = {
   filled: ['px-6 py-2.5', 'bg-primary text-on-primary', 'bg-disabled'],
@@ -28,50 +22,66 @@ const variantMap = {
     'bg-secondary-container text-on-secondary-container',
     'bg-disabled',
   ],
-  icon: ['p-2', 'text-on-surface-variant'],
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export type ButtonProps<T> = WithRenderAs<T> & {
+  variant: keyof typeof variantMap
+  Icon?: IconType
+}
+export function Button<T extends ElementType = 'button'>({
+  renderAs,
   children,
   className,
   variant,
   Icon,
   ...restProps
-}) => {
-  const isIcon = variant === 'icon'
+}: ButtonProps<T>) {
+  const Renderer = renderAs || 'button'
   const { disabled } = restProps
   const [commonStyle, enabledStyle, disabledStyle] = variantMap[variant]
 
   return (
-    <button
+    <Renderer
       className={clsx(
-        'relative flex items-center justify-center overflow-hidden rounded-full',
+        'typescale-label-large relative flex items-center justify-center overflow-hidden rounded-full',
         commonStyle,
         disabled ? clsx('text-on-disabled', disabledStyle) : enabledStyle,
-        isIcon || 'typescale-label-large',
         className,
       )}
       {...restProps}
     >
       {disabled || <StateLayer />}
-      {Icon ? (
-        <Icon
-          size={isIcon ? 24 : 18}
-          className={clsx(isIcon || 'mr-2')}
-          key={Icon.name}
-        />
-      ) : null}
+      {Icon ? <Icon size={18} className="mr-2" /> : null}
       {children}
-    </button>
+    </Renderer>
   )
 }
 
-export interface IconButtonProps extends ComponentPropsWithoutRef<'button'> {
+export type IconButtonProps<T> = WithRenderAs<T> & {
   Icon?: IconType
 }
+export function IconButton<T extends ElementType = 'button'>({
+  renderAs,
+  className,
+  Icon,
+  ...restProps
+}: IconButtonProps<T>) {
+  const Renderer = renderAs || 'button'
+  const { disabled } = restProps
 
-export const IconButton: React.FC<IconButtonProps> = (props) => {
-  return <Button variant="icon" {...props} />
+  return (
+    <Renderer
+      className={clsx(
+        'relative overflow-hidden rounded-full p-2',
+        disabled ? 'text-on-disabled' : 'text-on-surface-variant',
+        className,
+      )}
+      {...restProps}
+    >
+      {disabled || <StateLayer />}
+      {Icon ? <Icon size={24} /> : null}
+    </Renderer>
+  )
 }
 
 export const ColorScheme: React.FC = () => {

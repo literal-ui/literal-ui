@@ -1,17 +1,12 @@
 import clsx from 'clsx'
-import { ComponentProps, ComponentPropsWithoutRef, ElementType } from 'react'
+import { ComponentPropsWithoutRef, ElementType } from 'react'
 import { IconType } from 'react-icons'
 import { MdCheck } from 'react-icons/md'
-import { Simplify } from 'type-fest'
 
 import { StateLayer } from './StateLayer'
+import { WithRenderAs } from './types'
 
-type RendererProps<T> = T extends ElementType ? ComponentProps<T> : never
-
-// use `Simplify` to ensure `T` is inferred correctly
-// Inspired by https://github.com/tailwindlabs/headlessui/blob/a63ca93aae80326b4a97a4506d9ce7331a68ff60/packages/%40headlessui-react/src/types.ts#L19
-export type ChipProps<T> = Simplify<RendererProps<T>> & {
-  renderAs?: T
+export type ChipProps<T> = WithRenderAs<T> & {
   selected?: boolean
   elevated?: boolean
   Icon?: IconType
