@@ -1,6 +1,10 @@
 import clsx from 'clsx'
-import React, { useEffect } from 'react'
-import { ComponentPropsWithoutRef } from 'react'
+import React, {
+  cloneElement,
+  ComponentPropsWithoutRef,
+  isValidElement,
+  useEffect,
+} from 'react'
 import { MdMenuOpen, MdMenu } from 'react-icons/md'
 
 import { useMediaQuery } from '@literal-ui/hooks'
@@ -72,8 +76,8 @@ interface ItemProps extends ComponentPropsWithoutRef<'li'> {
   active?: boolean
 }
 const Item: React.FC<ItemProps> = ({ children, active = false, ...props }) => {
-  if (React.isValidElement(children)) {
-    children = React.cloneElement(children, {
+  if (isValidElement(children)) {
+    children = cloneElement(children, {
       ...children.props,
       className: clsx(
         children.props.className,

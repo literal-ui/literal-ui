@@ -1,4 +1,5 @@
 export * from './Button'
+export * from './NavigationBar'
 export * from './NavigationDrawer'
 export * from './Overlay'
 export * from './PreventFlash'
