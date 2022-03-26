@@ -34,7 +34,7 @@ export const NavigationDrawer: React.FC<NavigationDrawerProps> & {
       <nav
         className={clsx(
           open === undefined ? 'hidden sm:block' : open ? 'block' : 'hidden',
-          'bg-surface fixed top-16 z-20 float-left w-60 px-7 sm:sticky',
+          'bg-surface fixed top-16 z-20 w-60 px-7 sm:sticky',
           className,
         )}
         style={{ height: `calc(100vh - 64px)` }}

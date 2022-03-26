@@ -13,7 +13,13 @@ const blocks = [
   },
   {
     name: 'components',
-    items: ['button', 'navigation-bar', 'navigation-drawer', 'top-app-bar'],
+    items: [
+      'button',
+      'card',
+      'navigation-bar',
+      'navigation-drawer',
+      'top-app-bar',
+    ],
   },
 ]
 
@@ -26,21 +32,23 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      <NavigationDrawer>
-        {blocks.map(({ name, items }) => (
-          <NavigationDrawer.Block key={name} headline={fmt(name)}>
-            {items.map((item) => (
-              <NavigationDrawer.Item
-                active={router.asPath.includes(item)}
-                key={item}
-              >
-                <Link href={`/${name}/${item}`}>{fmt(item)}</Link>
-              </NavigationDrawer.Item>
-            ))}
-          </NavigationDrawer.Block>
-        ))}
-      </NavigationDrawer>
-      <main>{children}</main>
+      <div className="flex">
+        <NavigationDrawer>
+          {blocks.map(({ name, items }) => (
+            <NavigationDrawer.Block key={name} headline={fmt(name)}>
+              {items.map((item) => (
+                <NavigationDrawer.Item
+                  active={router.asPath.includes(item)}
+                  key={item}
+                >
+                  <Link href={`/${name}/${item}`}>{fmt(item)}</Link>
+                </NavigationDrawer.Item>
+              ))}
+            </NavigationDrawer.Block>
+          ))}
+        </NavigationDrawer>
+        <main className="flex-1 p-4">{children}</main>
+      </div>
       <Footer />
     </>
   )

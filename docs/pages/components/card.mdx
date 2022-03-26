@@ -1,0 +1,9 @@
+import { Card } from '@literal-ui/core'
+
+<div className="inline-block space-y-4">
+  {['elevated', 'filled', 'outlined'].map((variant) => (
+    <Card key={variant} variant={variant}>
+      This is a {variant} card.
+    </Card>
+  ))}
+</div>
