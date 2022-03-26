@@ -6,19 +6,14 @@ import { StateLayer } from './StateLayer'
 import { WithRenderAs } from './types'
 
 const variantMap = {
-  filled: ['px-6 py-2.5', 'bg-primary text-on-primary', 'bg-disabled'],
-  outlined: ['px-6 py-2.5', 'text-primary outlined'],
-  text: ['px-3 py-2.5', 'text-primary'],
+  filled: ['bg-primary text-on-primary', 'bg-disabled'],
+  outlined: ['text-primary outlined'],
+  text: ['text-primary'],
   elevated: [
-    'px-6 py-2.5',
     'bg-surface1 text-primary shadow-1',
     'shadow-none bg-none bg-disabled',
   ],
-  tonal: [
-    'px-6 py-2.5',
-    'bg-secondary-container text-on-secondary-container',
-    'bg-disabled',
-  ],
+  tonal: ['bg-secondary-container text-on-secondary-container', 'bg-disabled'],
 }
 
 export type ButtonProps<T> = WithRenderAs<T> & {
@@ -35,21 +30,25 @@ export function Button<T extends ElementType = 'button'>({
 }: ButtonProps<T>) {
   const Renderer = renderAs || 'button'
   const { disabled } = restProps
-  const [commonStyle, enabledStyle, disabledStyle] = variantMap[variant]
+  const [enabledStyle, disabledStyle] = variantMap[variant]
+  const isText = variant === 'text'
 
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative flex items-center justify-center overflow-hidden rounded-full',
-        commonStyle,
+        'typescale-label-large relative overflow-hidden rounded-full py-2.5',
+        isText ? 'px-4' : 'px-6',
+        Icon && 'inline-flex items-center',
         disabled ? clsx('text-on-disabled', disabledStyle) : enabledStyle,
         className,
       )}
       {...restProps}
     >
       {disabled || <StateLayer />}
-      {Icon ? <Icon size={18} className="mr-2" /> : null}
-      {children}
+      {Icon ? (
+        <Icon size={18} className={clsx('mr-2', isText ? '-ml-1' : '-ml-2')} />
+      ) : null}
+      <span>{children}</span>
     </Renderer>
   )
 }
