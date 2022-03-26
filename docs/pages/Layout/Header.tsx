@@ -3,7 +3,7 @@ import { RiGithubFill } from 'react-icons/ri'
 import {
   ColorScheme,
   IconButton,
-  NavigationDrawerToggler,
+  NavigationDrawer,
   TopAppBar,
 } from '@literal-ui/core'
 
@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
     <TopAppBar
       leading={
         <TopAppBar.Leading>
-          <NavigationDrawerToggler />
+          <NavigationDrawer.Toggler />
         </TopAppBar.Leading>
       }
       headline={<TopAppBar.Title>Literal UI</TopAppBar.Title>}

@@ -6,7 +6,7 @@ import { StateLayer } from './StateLayer'
 
 interface NavigationBarProps extends ComponentPropsWithoutRef<'menu'> {}
 export const NavigationBar: React.FC<NavigationBarProps> & {
-  Item: React.FC<ItemProps>
+  Item: typeof Item
 } = ({ className, ...props }) => {
   return (
     <menu
