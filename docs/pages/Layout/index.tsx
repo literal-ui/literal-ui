@@ -6,7 +6,19 @@ import { Footer } from './Footer'
 import { Header } from './Header'
 import { Link } from './Link'
 
-const links = ['button', 'navigation-bar', 'navigation-drawer', 'top-app-bar']
+const blocks = [
+  {
+    name: 'get-started',
+    items: ['install', 'usage'],
+  },
+  {
+    name: 'components',
+    items: ['button', 'navigation-bar', 'navigation-drawer', 'top-app-bar'],
+  },
+]
+
+const fmt = (name: string) =>
+  name.replace(/-/g, ' ').replace(/^(\w)/, (s) => s.toUpperCase())
 
 export const Layout: React.FC = ({ children }) => {
   const router = useRouter()
@@ -15,15 +27,17 @@ export const Layout: React.FC = ({ children }) => {
     <>
       <Header />
       <NavigationDrawer>
-        {links.map((link) => (
-          <NavigationDrawer.Item
-            active={router.asPath.includes(link)}
-            key={link}
-          >
-            <Link href={`/components/${link}`}>
-              {link.replace(/-/g, ' ').replace(/^(\w)/, (s) => s.toUpperCase())}
-            </Link>
-          </NavigationDrawer.Item>
+        {blocks.map(({ name, items }) => (
+          <NavigationDrawer.Block key={name} headline={fmt(name)}>
+            {items.map((item) => (
+              <NavigationDrawer.Item
+                active={router.asPath.includes(item)}
+                key={item}
+              >
+                <Link href={`/${name}/${item}`}>{fmt(item)}</Link>
+              </NavigationDrawer.Item>
+            ))}
+          </NavigationDrawer.Block>
         ))}
       </NavigationDrawer>
       <main>{children}</main>
