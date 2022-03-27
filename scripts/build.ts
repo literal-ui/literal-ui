@@ -1,6 +1,6 @@
-import typescript from '@rollup/plugin-typescript'
 import { defineConfig, rollup } from 'rollup'
 import dts from 'rollup-plugin-dts'
+import typescript from 'rollup-plugin-typescript2'
 
 const opts = defineConfig([
   {
@@ -9,7 +9,15 @@ const opts = defineConfig([
       { file: 'dist/index.mjs', format: 'esm' },
       { file: 'dist/index.js', format: 'cjs', exports: 'auto' },
     ],
-    plugins: [typescript()],
+    plugins: [
+      typescript({
+        tsconfigOverride: {
+          compilerOptions: {
+            paths: [],
+          },
+        },
+      }),
+    ],
   },
   {
     input: 'src/index.ts',

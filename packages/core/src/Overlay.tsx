@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ComponentPropsWithoutRef } from 'packages/hooks/node_modules/@types/react'
+import { ComponentPropsWithoutRef } from 'react'
 
 interface OverlayProps extends ComponentPropsWithoutRef<'div'> {}
 
