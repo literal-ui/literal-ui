@@ -1,43 +1,76 @@
 import clsx from 'clsx'
 import { ComponentPropsWithoutRef, ElementType } from 'react'
 import { IconType } from 'react-icons'
-import { MdCheck } from 'react-icons/md'
+import { MdCheck, MdClose } from 'react-icons/md'
 
 import { StateLayer } from './StateLayer'
+import { classes } from './classes'
 import { WithRenderAs } from './types'
 
-export type ChipProps<T> = WithRenderAs<T> & {
+type ChipOwnProps = {
   selected?: boolean
   elevated?: boolean
   Icon?: IconType
+  onDelete?: () => void
 }
-
-export function Chip<T extends ElementType = 'button'>({
+type ChipProps<T> = WithRenderAs<T> & ChipOwnProps
+function Chip<T extends ElementType = 'button'>({
   renderAs,
   children,
   selected = false,
   elevated = false,
   Icon,
-  ...restProps
+  className,
+  onDelete,
+  ...props
 }: ChipProps<T>) {
   const Renderer = renderAs || 'button'
+  const TrailingIcon = onDelete ? MdClose : null
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative flex items-center overflow-hidden rounded-lg py-1.5 pr-4',
+        'typescale-label-large relative overflow-hidden rounded-lg px-4 py-1.5',
+        (Icon || TrailingIcon) && 'inline-flex items-center',
         selected
           ? 'text-on-secondary-container bg-secondary-container'
-          : clsx('text-on-surface-variant', elevated || 'outlined'),
+          : clsx(
+              'text-on-surface-variant',
+              elevated || clsx('bg-surface', classes.outlined),
+            ),
         elevated && 'shadow-1',
-        Icon ? 'pl-2' : 'pl-4',
+        className,
       )}
-      {...restProps}
+      {...props}
     >
-      <StateLayer />
-      {Icon && <Icon size={18} className="mr-2" />}
-      {children}
+      {props.disabled || <StateLayer />}
+      {Icon && <Icon size={18} className="mr-2 -ml-1" />}
+      <span>{children}</span>
+      {TrailingIcon && (
+        <>
+          <TrailingIcon size={18} className="ml-2 -mr-1" />
+          {/* Nested button is invalid, so use `span` instead. */}
+          <span
+            role="button"
+            tabIndex={0}
+            className="absolute right-1 h-[26px] w-[26px] overflow-hidden rounded-full"
+            onClick={onDelete}
+          >
+            <StateLayer />
+          </span>
+        </>
+      )}
     </Renderer>
   )
+}
+
+export type InputChipOwnProps = Pick<
+  ChipOwnProps,
+  'selected' | 'onDelete' | 'Icon'
+>
+export type InputChipProps = ComponentPropsWithoutRef<'button'> &
+  InputChipOwnProps
+export const InputChip: React.FC<InputChipProps> = ({ ...props }) => {
+  return <Chip className="px-3" {...props} />
 }
 
 type FilterChipProps<T> = ChipProps<T> & {
