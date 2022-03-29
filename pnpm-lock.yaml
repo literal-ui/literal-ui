@@ -45,6 +45,7 @@ importers:
   docs:
     specifiers:
       '@mdx-js/loader': ^2.1.0
+      '@mdx-js/react': ^2.1.0
       '@next/mdx': ^12.1.0
       '@types/node': ^17.0.12
       '@types/react': 17.0.42
@@ -56,15 +57,20 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2
       react-icons: ^4.3.1
+      rehype-pretty-code: ^0.2.5
+      shiki: ^0.10.1
       tailwindcss: ^3.0.23
       type-fest: ^2.12.1
     dependencies:
       '@mdx-js/loader': 2.1.0
-      '@next/mdx': 12.1.0_@mdx-js+loader@2.1.0
+      '@mdx-js/react': 2.1.0_react@17.0.2
+      '@next/mdx': 12.1.0_957e1d0f71fa372e7df9140a34b2aa4c
       next: 12.1.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-icons: 4.3.1_react@17.0.2
+      rehype-pretty-code: 0.2.5_shiki@0.10.1
+      shiki: 0.10.1
       type-fest: 2.12.1
     devDependencies:
       '@types/node': 17.0.22
@@ -83,11 +89,13 @@ importers:
       clsx: ^1.1.1
       react: 17.0.2
       react-icons: ^4.3.1
+      ts-extras: ^0.10.1
     dependencies:
       '@literal-ui/hooks': link:../hooks
       clsx: 1.1.1
       react: 17.0.2
       react-icons: 4.3.1_react@17.0.2
+      ts-extras: 0.10.1
     devDependencies:
       '@types/react': 17.0.41
       '@types/react-dom': 17.0.14
@@ -418,6 +426,16 @@ packages:
       - supports-color
     dev: false
 
+  /@mdx-js/react/2.1.0_react@17.0.2:
+    resolution: {integrity: sha512-RlPnY2WcVe91pOilf3Rmu1pArKj7gSK03uoaMFKjPWTyh9t6t1VYGSX40twlpChNSPmbcQ29D0xvSBOVMWA6yw==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.1
+      '@types/react': 17.0.42
+      react: 17.0.2
+    dev: false
+
   /@next/env/12.1.0:
     resolution: {integrity: sha512-nrIgY6t17FQ9xxwH3jj0a6EOiQ/WDHUos35Hghtr+SWN/ntHIQ7UpuvSi0vaLzZVHQWaDupKI+liO5vANcDeTQ==}
     dev: false
@@ -428,13 +446,14 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /@next/mdx/12.1.0_@mdx-js+loader@2.1.0:
+  /@next/mdx/12.1.0_957e1d0f71fa372e7df9140a34b2aa4c:
     resolution: {integrity: sha512-Y+VF6mMbm7pbiSj6c0YI0bD02aK0JUglWplHW48o65JYGhJSD7jzDfuIJG6/XdQ8fhTnDj/6+kYLnV+1QmXFRQ==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '*'
     dependencies:
       '@mdx-js/loader': 2.1.0
+      '@mdx-js/react': 2.1.0_react@17.0.2
     dev: false
 
   /@next/swc-android-arm64/12.1.0:
@@ -655,7 +674,6 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: true
 
   /@types/react-dom/17.0.14:
     resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
@@ -677,11 +695,9 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.11
-    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/semver/6.2.3:
     resolution: {integrity: sha512-KQf+QAMWKMrtBMsB8/24w53tEsxllMj6TuA80TT/5igJalLI/zm0L3oXRbIAl4Ohfc85gyHX/jhMwsVkmhLU4A==}
@@ -1320,7 +1336,6 @@ packages:
 
   /csstype/3.0.11:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
-    dev: true
 
   /csv-generate/3.4.3:
     resolution: {integrity: sha512-w/T+rqR0vwvHqWs/1ZyMDWtHHSJaN06klRqJXBEpDJaM/+dZkso0OKh1VcuuYvK3XM53KysVNq8Ko/epCK8wOw==}
@@ -2716,6 +2731,10 @@ packages:
       minimist: 1.2.6
     dev: true
 
+  /jsonc-parser/3.0.0:
+    resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
+    dev: false
+
   /jsonfile/4.0.0:
     resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=}
     optionalDependencies:
@@ -3668,6 +3687,10 @@ packages:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
+  /parse-numeric-range/1.3.0:
+    resolution: {integrity: sha512-twN+njEipszzlMJd4ONUYgSfZPDxgHhT9Ahed5uTigpQn90FggW4SA/AIPq/6a149fTbE9qBEcSwE3FAEp6wQQ==}
+    dev: false
+
   /path-exists/3.0.0:
     resolution: {integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=}
     engines: {node: '>=4'}
@@ -3968,6 +3991,16 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /rehype-pretty-code/0.2.5_shiki@0.10.1:
+    resolution: {integrity: sha512-Gm7EquFGiM8ucJ2neHKzSmV5Nb1b6dBQlTEXyWbGUZZQF5sJc5RI8yw2v9C1swomqyINil4vk5T6jNOkbHtEDA==}
+    engines: {node: ^12.16.0 || >=13.2.0}
+    peerDependencies:
+      shiki: '*'
+    dependencies:
+      parse-numeric-range: 1.3.0
+      shiki: 0.10.1
+    dev: false
+
   /remark-mdx/2.1.0:
     resolution: {integrity: sha512-J6Yqw566SaEy6A9Neni1JJTaEjbjsM3OsKqL04TtCvZhevRtFi8CG8GIQPzvxIRKRCAOnWw1Vpk1AInB1OpNqA==}
     dependencies:
@@ -4166,6 +4199,14 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /shiki/0.10.1:
+    resolution: {integrity: sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==}
+    dependencies:
+      jsonc-parser: 3.0.0
+      vscode-oniguruma: 1.6.2
+      vscode-textmate: 5.2.0
+    dev: false
 
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
@@ -4547,6 +4588,13 @@ packages:
 
   /trough/2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
+    dev: false
+
+  /ts-extras/0.10.1:
+    resolution: {integrity: sha512-3nen9Goi11/jiTkLk3V7Y3MbpZWl9QowJJ9W2KuPRYxj/5V/Ofm7J7pAQN87/DyKDK/0vfz4HLtXzrTSoLAnjg==}
+    engines: {node: '>=12.20'}
+    dependencies:
+      type-fest: 2.12.1
     dev: false
 
   /ts-interface-checker/0.1.13:
@@ -4954,6 +5002,14 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
+    dev: false
+
+  /vscode-oniguruma/1.6.2:
+    resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}
+    dev: false
+
+  /vscode-textmate/5.2.0:
+    resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
     dev: false
 
   /wcwidth/1.0.1:

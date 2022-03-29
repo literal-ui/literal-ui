@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { ElementType } from 'react'
 import { IconType } from 'react-icons'
+import { objectKeys } from 'ts-extras'
 
 import { StateLayer } from './StateLayer'
 import { classes } from './classes'
@@ -10,10 +11,7 @@ const variantMap = {
   filled: ['bg-primary text-on-primary', 'bg-disabled'],
   outlined: [`text-primary ${classes.outlined}`],
   text: ['text-primary'],
-  elevated: [
-    'bg-surface1 text-primary shadow-1',
-    'shadow-none bg-none bg-disabled',
-  ],
+  elevated: ['bg-surface1 text-primary shadow-1', 'bg-disabled'],
   tonal: ['bg-secondary-container text-on-secondary-container', 'bg-disabled'],
 }
 
@@ -52,6 +50,7 @@ export function Button<T extends ElementType = 'button'>({
     </Renderer>
   )
 }
+Button.variants = objectKeys(variantMap)
 
 export type IconButtonProps<T> = WithRenderAs<T> & {
   Icon?: IconType

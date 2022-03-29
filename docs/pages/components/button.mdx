@@ -1,13 +1,50 @@
-import { Button, IconButton, ColorScheme } from '@literal-ui/core'
-import { RiGithubFill } from 'react-icons/ri'
+import { Button } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
 
-<Button variant="tonal" Icon={RiGithubFill}>
-  Hovered
+# `import { Button } from '@literal-ui/core'{:ts}`
+
+## `variant: "filled" | "outlined" | "text" | "elevated" | "tonal"{:ts}`
+
+<Demo>
+  {Button.variants.map((variant) => (
+    <Button key={variant} variant={variant}>
+      {variant}
+    </Button>
+  ))}
+</Demo>
+
+```tsx
+<Button variant={variant}>{variant}</Button>
+```
+
+## `disabled: boolean{:ts}`
+
+<Demo>
+  {Button.variants.map((variant) => (
+    <Button key={variant} variant={variant} disabled>
+      {variant}
+    </Button>
+  ))}
+</Demo>
+
+```tsx
+<Button variant={variant} disabled>
+  {variant}
 </Button>
-<Button variant="text" Icon={RiGithubFill}>
-  Hovered
+```
+
+## `Icon: IconType{:ts}`
+
+<Demo>
+  {Button.variants.map((variant) => (
+    <Button key={variant} variant={variant} Icon={MdCheck}>
+      {variant}
+    </Button>
+  ))}
+</Demo>
+
+```tsx
+<Button variant={variant} Icon={MdCheck}>
+  {variant}
 </Button>
-
-<IconButton Icon={RiGithubFill} />
-
-<ColorScheme />
+```

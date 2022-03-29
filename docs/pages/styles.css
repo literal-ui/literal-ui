@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+code {
+  @apply overflow-x-auto;
+}
+
+code[data-theme='dark'] {
+  @apply hidden dark:block;
+}
+
+code[data-theme='light'] {
+  @apply block dark:hidden;
+}
+
+pre > code {
+  @apply bg-surface1 rounded-lg p-4;
+}

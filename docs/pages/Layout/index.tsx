@@ -47,7 +47,9 @@ export const Layout: React.FC = ({ children }) => {
             </NavigationDrawer.Block>
           ))}
         </NavigationDrawer>
-        <main className="flex-1 p-4">{children}</main>
+        <main className="mx-auto w-screen max-w-3xl flex-1 p-4">
+          {children}
+        </main>
       </div>
       <Footer />
     </>
