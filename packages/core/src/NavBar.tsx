@@ -4,8 +4,8 @@ import { IconType } from 'react-icons'
 
 import { StateLayer } from './StateLayer'
 
-interface NavigationBarProps extends ComponentPropsWithoutRef<'menu'> {}
-export const NavigationBar: React.FC<NavigationBarProps> & {
+interface NavBarProps extends ComponentPropsWithoutRef<'menu'> {}
+export const NavBar: React.FC<NavBarProps> & {
   Item: typeof Item
 } = ({ className, ...props }) => {
   return (
@@ -70,4 +70,4 @@ const Item: React.FC<ItemProps> = ({
   )
 }
 
-NavigationBar.Item = Item
+NavBar.Item = Item

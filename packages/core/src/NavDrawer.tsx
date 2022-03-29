@@ -15,8 +15,8 @@ import { useLiteralConfig } from './Provider'
 import { StateLayer } from './StateLayer'
 import { WithDivider } from './WithDivider'
 
-interface NavigationDrawerProps extends ComponentPropsWithoutRef<'nav'> {}
-export const NavigationDrawer: React.FC<NavigationDrawerProps> & {
+interface NavDrawerProps extends ComponentPropsWithoutRef<'nav'> {}
+export const NavDrawer: React.FC<NavDrawerProps> & {
   Toggler: typeof Toggler
   Block: typeof Block
   Item: typeof Item
@@ -96,6 +96,6 @@ const Toggler: React.FC = () => {
   return <IconButton Icon={open ? MdMenuOpen : MdMenu} onClick={toggle} />
 }
 
-NavigationDrawer.Block = Block
-NavigationDrawer.Item = Item
-NavigationDrawer.Toggler = Toggler
+NavDrawer.Block = Block
+NavDrawer.Item = Item
+NavDrawer.Toggler = Toggler

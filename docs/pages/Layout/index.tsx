@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { NavigationDrawer } from '@literal-ui/core'
+import { NavDrawer } from '@literal-ui/core'
 
 import { Footer } from './Footer'
 import { Header } from './Header'
@@ -33,20 +33,20 @@ export const Layout: React.FC = ({ children }) => {
     <>
       <Header />
       <div className="flex">
-        <NavigationDrawer>
+        <NavDrawer>
           {blocks.map(({ name, items }) => (
-            <NavigationDrawer.Block key={name} headline={fmt(name)}>
+            <NavDrawer.Block key={name} headline={fmt(name)}>
               {items.map((item) => (
-                <NavigationDrawer.Item
+                <NavDrawer.Item
                   active={router.asPath.includes(item)}
                   key={item}
                 >
                   <Link href={`/${name}/${item}`}>{fmt(item)}</Link>
-                </NavigationDrawer.Item>
+                </NavDrawer.Item>
               ))}
-            </NavigationDrawer.Block>
+            </NavDrawer.Block>
           ))}
-        </NavigationDrawer>
+        </NavDrawer>
         <main className="mx-auto w-screen max-w-3xl flex-1 p-4">
           {children}
         </main>
