@@ -11,7 +11,7 @@ export const NavigationBar: React.FC<NavigationBarProps> & {
   return (
     <menu
       className={clsx(
-        'bg-surface fixed bottom-0 flex w-screen sm:hidden',
+        'bg-surface sticky bottom-0 flex w-screen sm:hidden',
         className,
       )}
       {...props}
