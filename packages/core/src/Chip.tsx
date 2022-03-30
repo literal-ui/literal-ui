@@ -78,16 +78,13 @@ export const AssistChip: React.FC<AssistChipProps> = ({ ...props }) => {
   return <Chip {...props} />
 }
 
-type FilterChipProps<T> = ChipProps<T> & {
-  indicator?: boolean
-}
+export type FilterChipProps<T> = WithRenderAs<T> &
+  Pick<ChipOwnProps, 'selected' | 'elevated'>
 export function FilterChip<T extends ElementType = 'button'>({
-  Icon,
-  indicator = false,
   ...props
 }: FilterChipProps<T>) {
   const { selected } = props
-  return <Chip Icon={selected && indicator ? MdCheck : Icon} {...props} />
+  return <Chip Icon={selected ? MdCheck : undefined} {...props} />
 }
 
 export type SuggestionChipProps = ComponentProps<'button'> &

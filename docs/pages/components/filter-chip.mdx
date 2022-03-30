@@ -1,0 +1,57 @@
+---
+title: FilterChip
+desc: FilterChip component
+---
+
+import { FilterChip } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+export const selecteds = [false, true]
+
+# `import { FilterChip } from '@literal-ui/core'{:ts}`
+
+## `selected?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <FilterChip key={i} selected={selected}>
+      Chip
+    </FilterChip>
+  ))}
+</Demo>
+
+```tsx
+<FilterChip selected={selected}>Chip</FilterChip>
+```
+
+## `elevated?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <FilterChip key={i} selected={selected} elevated>
+      Chip
+    </FilterChip>
+  ))}
+</Demo>
+
+```tsx
+<FilterChip selected={selected} elevated>
+  Chip
+</FilterChip>
+```
+
+## `disabled?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <FilterChip key={i} selected={selected} disabled>
+      Chip
+    </FilterChip>
+  ))}
+</Demo>
+
+```tsx
+<FilterChip selected={selected} disabled>
+  Chip
+</FilterChip>
+```
