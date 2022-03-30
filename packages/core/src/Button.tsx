@@ -9,7 +9,7 @@ import { WithRenderAs } from './types'
 
 const variantMap = {
   filled: ['bg-primary text-on-primary', 'bg-disabled'],
-  outlined: [`text-primary ${classes.outlined}`],
+  outlined: [`text-primary ${classes.outlined}`, classes.outlined],
   text: ['text-primary'],
   elevated: ['bg-surface1 text-primary shadow-1', 'bg-disabled'],
   tonal: ['bg-secondary-container text-on-secondary-container', 'bg-disabled'],
@@ -34,7 +34,7 @@ export function Button<T extends ElementType = 'button'>({
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative overflow-hidden rounded-full py-2.5',
+        'typescale-label-large relative select-none overflow-hidden rounded-full py-2.5',
         isText ? 'px-4' : 'px-6',
         Icon && 'inline-flex items-center',
         props.disabled ? clsx('text-on-disabled', disabledStyle) : enabledStyle,
