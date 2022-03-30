@@ -19,7 +19,7 @@ const withTM = require('next-transpile-modules')([
  **/
 module.exports = withTM({
   reactStrictMode: true,
-  pageExtensions: ['page.tsx', 'mdx'],
+  pageExtensions: ['tsx', 'mdx'],
   webpack: (config, options) => {
     config.module.rules.push({
       test: /.mdx?$/, // load both .md and .mdx files
