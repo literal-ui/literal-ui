@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router'
+import { RiGithubFill } from 'react-icons/ri'
 
-import { NavDrawer } from '@literal-ui/core'
+import { ColorScheme, IconButton, NavDrawer, TopAppBar } from '@literal-ui/core'
 
-import { Footer } from './Footer'
-import { Header } from './Header'
 import { Link } from './Link'
 
 const blocks = [
@@ -36,7 +35,24 @@ export const Layout: React.FC = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <TopAppBar
+        leading={
+          <TopAppBar.Leading>
+            <NavDrawer.Toggler />
+          </TopAppBar.Leading>
+        }
+        headline={<TopAppBar.Title>Literal UI</TopAppBar.Title>}
+        trailing={
+          <TopAppBar.Trailing>
+            <IconButton
+              renderAs={Link}
+              href="https://github.com/literal-ui/literal-ui"
+              Icon={RiGithubFill}
+            />
+            <ColorScheme />
+          </TopAppBar.Trailing>
+        }
+      />
       <div className="flex">
         <NavDrawer>
           {blocks.map(({ name, items }) => (
@@ -56,7 +72,6 @@ export const Layout: React.FC = ({ children }) => {
           {children}
         </main>
       </div>
-      <Footer />
     </>
   )
 }

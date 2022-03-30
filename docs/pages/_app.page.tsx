@@ -6,9 +6,7 @@ import type { AppProps } from 'next/app'
 
 import { LiteralProvider } from '@literal-ui/core'
 
-import { Demo, H1, H2 } from '../components'
-
-import { Layout } from './Layout'
+import { Demo, H1, H2, Layout } from '../components'
 
 const components: MDXComponents = {
   h1: H1,
