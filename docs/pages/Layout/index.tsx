@@ -17,6 +17,7 @@ const blocks = [
       'button',
       'card',
       'input-chip',
+      'assist-chip',
       'suggestion-chip',
       'navigation-bar',
       'navigation-drawer',

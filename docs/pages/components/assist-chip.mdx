@@ -1,0 +1,57 @@
+---
+title: AssistChip
+desc: AssistChip component
+---
+
+import { AssistChip } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+export const elevateds = [false, true]
+
+# `import { AssistChip } from '@literal-ui/core'{:ts}`
+
+## `elevated?: boolean{:ts}`
+
+<Demo>
+  {elevateds.map((elevated, i) => (
+    <AssistChip key={i} elevated={elevated}>
+      Chip
+    </AssistChip>
+  ))}
+</Demo>
+
+```tsx
+<AssistChip elevated={elevated}>Chip</AssistChip>
+```
+
+## `disabled?: boolean{:ts}`
+
+<Demo>
+  {elevateds.map((elevated, i) => (
+    <AssistChip key={i} elevated={elevated} disabled>
+      Chip
+    </AssistChip>
+  ))}
+</Demo>
+
+```tsx
+<AssistChip elevated={elevated} disabled>
+  Chip
+</AssistChip>
+```
+
+## `Icon?: IconType{:ts}`
+
+<Demo>
+  {elevateds.map((elevated, i) => (
+    <AssistChip key={i} elevated={elevated} Icon={MdCheck}>
+      Chip
+    </AssistChip>
+  ))}
+</Demo>
+
+```tsx
+<AssistChip elevated={elevated} Icon={MdCheck}>
+  Chip
+</AssistChip>
+```

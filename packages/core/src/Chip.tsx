@@ -72,6 +72,12 @@ export const InputChip: React.FC<InputChipProps> = ({ ...props }) => {
   return <Chip className="px-3" {...props} />
 }
 
+export type AssistChipProps = ComponentProps<'button'> &
+  Pick<ChipOwnProps, 'elevated' | 'Icon'>
+export const AssistChip: React.FC<AssistChipProps> = ({ ...props }) => {
+  return <Chip {...props} />
+}
+
 type FilterChipProps<T> = ChipProps<T> & {
   indicator?: boolean
 }
