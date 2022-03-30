@@ -1,0 +1,51 @@
+---
+title: IconButton
+desc: IconButton component
+---
+
+import { IconButton } from '@literal-ui/core'
+import { RiGithubFill } from 'react-icons/ri'
+
+# `import { IconButton } from '@literal-ui/core'{:ts}`
+
+## `Icon: IconType{:ts}`
+
+<Demo>
+  <IconButton Icon={RiGithubFill} />
+</Demo>
+
+```tsx
+<IconButton Icon={RiGithubFill} />
+```
+
+## `disabled?: boolean{:ts}`
+
+<Demo>
+  <IconButton Icon={RiGithubFill} disabled />
+</Demo>
+
+```tsx
+<IconButton Icon={RiGithubFill} disabled />
+```
+
+## `renderAs?: React.ElementType{:ts}`
+
+<Demo>
+  <IconButton
+    Icon={RiGithubFill}
+    renderAs="a"
+    href="https://github.com"
+    target="_blank"
+    rel="noopener"
+  />
+</Demo>
+
+```tsx
+<IconButton
+  Icon={RiGithubFill}
+  renderAs="a"
+  href="https://github.com"
+  target="_blank"
+  rel="noopener"
+/>
+```

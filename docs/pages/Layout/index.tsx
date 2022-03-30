@@ -15,6 +15,7 @@ const blocks = [
     name: 'components',
     items: [
       'button',
+      'icon-button',
       'card',
       'input-chip',
       'assist-chip',
@@ -40,14 +41,14 @@ export const Layout: React.FC = ({ children }) => {
         <NavDrawer>
           {blocks.map(({ name, items }) => (
             <NavDrawer.Block key={name} headline={fmt(name)}>
-              {items.map((item) => (
-                <NavDrawer.Item
-                  active={router.asPath.includes(item)}
-                  key={item}
-                >
-                  <Link href={`/${name}/${item}`}>{fmt(item)}</Link>
-                </NavDrawer.Item>
-              ))}
+              {items.map((item) => {
+                const path = `/${name}/${item}`
+                return (
+                  <NavDrawer.Item active={router.pathname === path} key={item}>
+                    <Link href={path}>{fmt(item)}</Link>
+                  </NavDrawer.Item>
+                )
+              })}
             </NavDrawer.Block>
           ))}
         </NavDrawer>
