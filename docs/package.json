@@ -10,8 +10,9 @@
   "dependencies": {
     "@mdx-js/loader": "^2.1.0",
     "@mdx-js/react": "^2.1.0",
-    "@next/mdx": "^12.1.0",
+    "gray-matter": "^4.0.3",
     "next": "12.1.0",
+    "next-seo": "^5.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",

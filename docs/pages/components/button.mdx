@@ -1,3 +1,8 @@
+---
+title: Button
+desc: Button component
+---
+
 import { Button } from '@literal-ui/core'
 import { MdCheck } from 'react-icons/md'
 
@@ -17,7 +22,7 @@ import { MdCheck } from 'react-icons/md'
 <Button variant={variant}>{variant}</Button>
 ```
 
-## `disabled: boolean{:ts}`
+## `disabled?: boolean{:ts}`
 
 <Demo>
   {Button.variants.map((variant) => (
@@ -33,7 +38,7 @@ import { MdCheck } from 'react-icons/md'
 </Button>
 ```
 
-## `Icon: IconType{:ts}`
+## `Icon?: IconType{:ts}`
 
 <Demo>
   {Button.variants.map((variant) => (
@@ -46,5 +51,31 @@ import { MdCheck } from 'react-icons/md'
 ```tsx
 <Button variant={variant} Icon={MdCheck}>
   {variant}
+</Button>
+```
+
+## `renderAs?: React.ElementType{:ts}`
+
+<Demo>
+  <Button
+    variant="tonal"
+    renderAs="a"
+    href="https://github.com"
+    target="_blank"
+    rel="noopener"
+  >
+    tonal
+  </Button>
+</Demo>
+
+```tsx
+<Button
+  variant="tonal"
+  renderAs="a"
+  href="https://github.com"
+  target="_blank"
+  rel="noopener"
+>
+  tonal
 </Button>
 ```

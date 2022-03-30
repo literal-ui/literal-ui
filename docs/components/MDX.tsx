@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import { ComponentProps } from 'react'
+import { NextSeo } from 'next-seo'
+import React, { ComponentProps } from 'react'
 
 interface HeadingProps extends ComponentProps<'h1'> {
   renderAs?: 'h1' | 'h2' | 'h3'
@@ -27,4 +28,16 @@ export function H2({ className, ...props }: HeadingProps) {
       {...props}
     />
   )
+}
+
+type Meta = { title?: string; desc?: string }
+export function withLayout({ title, desc }: Meta) {
+  return function Layout({ children }) {
+    return (
+      <>
+        <NextSeo title={`${title} - Literal UI`} description={desc} />
+        <article>{children}</article>
+      </>
+    )
+  } as React.FC
 }
