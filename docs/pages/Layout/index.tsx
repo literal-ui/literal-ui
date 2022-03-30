@@ -16,6 +16,8 @@ const blocks = [
     items: [
       'button',
       'card',
+      'input-chip',
+      'suggestion-chip',
       'navigation-bar',
       'navigation-drawer',
       'top-app-bar',

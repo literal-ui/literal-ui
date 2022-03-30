@@ -1,0 +1,57 @@
+---
+title: InputChip
+desc: InputChip component
+---
+
+import { InputChip } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+export const selecteds = [false, true]
+
+# `import { InputChip } from '@literal-ui/core'{:ts}`
+
+## `selected?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <InputChip key={i} selected={selected}>
+      Chip
+    </InputChip>
+  ))}
+</Demo>
+
+```tsx
+<InputChip selected={selected}>Chip</InputChip>
+```
+
+## `onDelete?: () => void{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <InputChip key={i} selected={selected} onDelete={(e) => console.log(e)}>
+      Chip
+    </InputChip>
+  ))}
+</Demo>
+
+```tsx
+<InputChip selected={selected} onDelete={console.log}>
+  Chip
+</InputChip>
+```
+
+## `Icon?: IconType{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <InputChip key={i} selected={selected} Icon={MdCheck}>
+      Chip
+    </InputChip>
+  ))}
+</Demo>
+
+```tsx
+<InputChip selected={selected} Icon={MdCheck}>
+  Chip
+</InputChip>
+```

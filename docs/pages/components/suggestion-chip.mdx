@@ -1,0 +1,73 @@
+---
+title: SuggestionChip
+desc: SuggestionChip component
+---
+
+import { SuggestionChip } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+export const selecteds = [false, true]
+
+# `import { SuggestionChip } from '@literal-ui/core'{:ts}`
+
+## `selected?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <SuggestionChip key={i} selected={selected}>
+      Chip
+    </SuggestionChip>
+  ))}
+</Demo>
+
+```tsx
+<SuggestionChip selected={selected}>Chip</SuggestionChip>
+```
+
+## `elevated?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <SuggestionChip key={i} selected={selected} elevated>
+      Chip
+    </SuggestionChip>
+  ))}
+</Demo>
+
+```tsx
+<SuggestionChip selected={selected} elevated>
+  Chip
+</SuggestionChip>
+```
+
+## `disabled?: boolean{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <SuggestionChip key={i} selected={selected} disabled>
+      Chip
+    </SuggestionChip>
+  ))}
+</Demo>
+
+```tsx
+<SuggestionChip selected={selected} disabled>
+  Chip
+</SuggestionChip>
+```
+
+## `Icon?: IconType{:ts}`
+
+<Demo>
+  {selecteds.map((selected, i) => (
+    <SuggestionChip key={i} selected={selected} Icon={MdCheck}>
+      Chip
+    </SuggestionChip>
+  ))}
+</Demo>
+
+```tsx
+<SuggestionChip selected={selected} Icon={MdCheck}>
+  Chip
+</SuggestionChip>
+```

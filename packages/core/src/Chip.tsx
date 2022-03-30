@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ComponentPropsWithoutRef, ElementType } from 'react'
+import { ComponentProps, ElementType } from 'react'
 import { IconType } from 'react-icons'
 import { MdCheck, MdClose } from 'react-icons/md'
 
@@ -26,18 +26,21 @@ function Chip<T extends ElementType = 'button'>({
 }: ChipProps<T>) {
   const Renderer = renderAs || 'button'
   const TrailingIcon = onDelete ? MdClose : null
+  const { disabled } = props
+  const outlined = !selected && !elevated
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative overflow-hidden rounded-lg px-4 py-1.5',
+        'typescale-label-large relative select-none overflow-hidden rounded-lg px-4 py-1.5',
         (Icon || TrailingIcon) && 'inline-flex items-center',
-        selected
-          ? 'text-on-secondary-container bg-secondary-container'
-          : clsx(
-              'text-on-surface-variant',
-              elevated || clsx('bg-surface', classes.outlined),
-            ),
-        elevated && 'shadow-1',
+        outlined && classes.outlined,
+        disabled
+          ? clsx('text-on-disabled', !outlined && 'bg-disabled')
+          : {
+              'text-on-surface-variant': !selected,
+              'text-on-secondary-container bg-secondary-container': selected,
+              'shadow-1': elevated,
+            },
         className,
       )}
       {...props}
@@ -63,12 +66,8 @@ function Chip<T extends ElementType = 'button'>({
   )
 }
 
-export type InputChipOwnProps = Pick<
-  ChipOwnProps,
-  'selected' | 'onDelete' | 'Icon'
->
-export type InputChipProps = ComponentPropsWithoutRef<'button'> &
-  InputChipOwnProps
+export type InputChipProps = ComponentProps<'button'> &
+  Pick<ChipOwnProps, 'selected' | 'onDelete' | 'Icon'>
 export const InputChip: React.FC<InputChipProps> = ({ ...props }) => {
   return <Chip className="px-3" {...props} />
 }
@@ -85,11 +84,8 @@ export function FilterChip<T extends ElementType = 'button'>({
   return <Chip Icon={selected && indicator ? MdCheck : Icon} {...props} />
 }
 
-interface SuggestiveChipProps extends ComponentPropsWithoutRef<'button'> {
-  selected?: boolean
-  elevated?: boolean
-  Icon?: IconType
-}
-export const SuggestiveChip: React.FC<SuggestiveChipProps> = ({ ...props }) => {
+export type SuggestionChipProps = ComponentProps<'button'> &
+  Pick<ChipOwnProps, 'selected' | 'elevated' | 'Icon'>
+export const SuggestionChip: React.FC<SuggestionChipProps> = ({ ...props }) => {
   return <Chip {...props} />
 }
