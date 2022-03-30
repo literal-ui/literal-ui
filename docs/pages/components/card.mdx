@@ -1,9 +1,39 @@
-import { Card } from '@literal-ui/core'
+---
+title: Card
+desc: Card component
+---
 
-<div className="inline-block space-y-4">
-  {['elevated', 'filled', 'outlined'].map((variant) => (
+import { Card } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+# `import { Card } from '@literal-ui/core'{:ts}`
+
+## `variant: "elevated" | "filled" | "outlined"{:ts}`
+
+<Demo>
+  {Card.variants.map((variant) => (
     <Card key={variant} variant={variant}>
-      This is a {variant} card.
+      {variant}
     </Card>
   ))}
-</div>
+</Demo>
+
+```tsx
+<Card variant={variant}>{variant}</Card>
+```
+
+## `onClick?: () => void{:ts}`
+
+<Demo>
+  {Card.variants.map((variant) => (
+    <Card key={variant} variant={variant} onClick={(e) => console.log(e)}>
+      {variant}
+    </Card>
+  ))}
+</Demo>
+
+```tsx
+<Card variant={variant} onClick={console.log}>
+  {variant}
+</Card>
+```
