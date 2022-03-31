@@ -19,6 +19,7 @@
     "@literal-ui/hooks": "workspace:*",
     "clsx": "^1.1.1",
     "react": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "type-fest": "^2.12.1"
   }
 }
