@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { ComponentPropsWithoutRef } from 'react'
-import { objectKeys } from 'ts-extras'
 
 import { StateLayer } from './StateLayer'
 import { classes } from './classes'
+import { keys } from './utils'
 
 const variantMap = {
   elevated: 'bg-surface shadow-1',
@@ -31,4 +31,4 @@ export function Card({ className, variant, children, ...props }: CardProps) {
     </div>
   )
 }
-Card.variants = objectKeys(variantMap)
+Card.variants = keys(variantMap)

@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 import { ElementType } from 'react'
 import { IconType } from 'react-icons'
-import { objectKeys } from 'ts-extras'
 
 import { StateLayer } from './StateLayer'
 import { classes } from './classes'
 import { WithRenderAs } from './types'
+import { keys } from './utils'
 
 const variantMap = {
   filled: ['bg-primary text-on-primary', 'bg-disabled'],
@@ -50,7 +50,7 @@ export function Button<T extends ElementType = 'button'>({
     </Renderer>
   )
 }
-Button.variants = objectKeys(variantMap)
+Button.variants = keys(variantMap)
 
 export type IconButtonProps<T> = WithRenderAs<T> & {
   Icon?: IconType

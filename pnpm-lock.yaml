@@ -91,13 +91,11 @@ importers:
       clsx: ^1.1.1
       react: 17.0.2
       react-icons: ^4.3.1
-      ts-extras: ^0.10.1
     dependencies:
       '@literal-ui/hooks': link:../hooks
       clsx: 1.1.1
       react: 17.0.2
       react-icons: 4.3.1_react@17.0.2
-      ts-extras: 0.10.1
     devDependencies:
       '@types/react': 17.0.41
       '@types/react-dom': 17.0.14
@@ -4622,13 +4620,6 @@ packages:
 
   /trough/2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
-    dev: false
-
-  /ts-extras/0.10.1:
-    resolution: {integrity: sha512-3nen9Goi11/jiTkLk3V7Y3MbpZWl9QowJJ9W2KuPRYxj/5V/Ofm7J7pAQN87/DyKDK/0vfz4HLtXzrTSoLAnjg==}
-    engines: {node: '>=12.20'}
-    dependencies:
-      type-fest: 2.12.1
     dev: false
 
   /ts-interface-checker/0.1.13:
