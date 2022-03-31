@@ -1,5 +1,11 @@
 # @literal-ui/core
 
+## 0.0.5
+
+### Patch Changes
+
+- 4c375f5: fix: implicit deps
+
 ## 0.0.4
 
 ### Patch Changes
