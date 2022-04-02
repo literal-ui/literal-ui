@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ComponentProps, useRef, useState } from 'react'
+import { ComponentProps, useEffect, useRef, useState } from 'react'
 import { IconType } from 'react-icons'
 
 const variants = ['filled', 'outlined'] as const
@@ -25,11 +25,19 @@ export function TextField({
   ...props
 }: TextFieldProps) {
   const [focused, setFocused] = useState(false)
+  const [touched, setTouched] = useState(false)
   const ref = useRef<HTMLInputElement>(null)
 
-  const hoist = focused || ref.current?.value || props.defaultValue
+  useEffect(() => {
+    if (focused) setTouched(true)
+  }, [focused])
+
+  const { disabled, defaultValue, value } = props
+  const _value = touched ? ref.current?.value : defaultValue || value
+  // `defaultValue` and `value` maybe number (includes 0)
+  const hasValue = !['', undefined].includes(_value as any)
+  const hoist = focused || hasValue
   const filled = variant === 'filled'
-  const { disabled } = props
 
   return (
     <div className={disabled ? 'text-on-disabled' : 'text-on-surface-variant'}>
