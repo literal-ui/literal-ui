@@ -1,0 +1,35 @@
+---
+title: TextField
+desc: TextField component
+---
+
+import { TextField } from '@literal-ui/core'
+import { MdSearch } from 'react-icons/md'
+
+export const selecteds = [false, true]
+
+# `import { TextField } from '@literal-ui/core'{:ts}`
+
+## `variant: "filled" | "outlined"{:ts}`
+
+<Demo>
+  {TextField.variants.map((variant, i) => (
+    <TextField key={i} variant={variant} name={variant} />
+  ))}
+</Demo>
+
+```tsx
+<TextField variant={variant} name={variant} />
+```
+
+## `Icon?: IconType{:ts}`
+
+<Demo>
+  {TextField.variants.map((variant, i) => (
+    <TextField key={i} variant={variant} name={variant} Icon={MdSearch} />
+  ))}
+</Demo>
+
+```tsx
+<TextField variant={variant} name={variant} Icon={MdSearch} />
+```

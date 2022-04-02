@@ -47,7 +47,10 @@ interface TrailingProps extends ComponentPropsWithoutRef<'div'> {}
 const Trailing: React.FC<TrailingProps> = ({ className, ...props }) => {
   return (
     <div
-      className={clsx('text-on-surface-variant flex gap-2', className)}
+      className={clsx(
+        'text-on-surface-variant flex items-center gap-2',
+        className,
+      )}
       {...props}
     />
   )

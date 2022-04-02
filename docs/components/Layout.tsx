@@ -20,6 +20,7 @@ const blocks = [
       'assist-chip',
       'filter-chip',
       'suggestion-chip',
+      'text-field',
       'navigation-bar',
       'navigation-drawer',
       'top-app-bar',
