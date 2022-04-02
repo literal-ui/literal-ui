@@ -30,7 +30,7 @@ export function TextField({
 
   return (
     <div className="text-on-surface-variant">
-      <div className="typescale-body-large relative flex h-14 items-center">
+      <div className="typescale-body-large group relative flex h-14 items-center">
         {Icon && <Icon size={20} className="absolute -z-10 ml-3" />}
         <label
           htmlFor={name}
@@ -59,9 +59,9 @@ export function TextField({
             onBlur?.(e)
           }}
           className={clsx(
-            'text-on-surface h-full bg-transparent pr-4 focus:outline-none',
+            'text-on-surface h-full rounded-t bg-transparent pr-4 focus:outline-none',
             Icon ? 'pl-12' : 'pl-4',
-            filled && 'pt-6 pb-2',
+            filled && 'hover:bg-on-surface/hover pt-6 pb-2',
             className,
           )}
           {...props}
@@ -81,10 +81,12 @@ export function TextField({
             className={clsx(
               'absolute inset-0 -z-50',
               '-top-1 rounded px-2.5',
-              focused ? 'border-primary border-2' : 'border-outline border',
+              focused
+                ? 'border-primary border-2'
+                : 'group-hover:border-on-surface border-outline border',
             )}
           >
-            <legend className={clsx('typescale-body-small h-2')}>
+            <legend className="typescale-body-small h-2">
               <span className={clsx('px-1', hoist ? 'opacity-0' : 'hidden')}>
                 {name}
               </span>
