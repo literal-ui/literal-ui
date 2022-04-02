@@ -25,7 +25,7 @@ export function TextField({
   const [focused, setFocused] = useState(false)
   const ref = useRef<HTMLInputElement>(null)
 
-  const hoist = focused || ref.current?.value
+  const hoist = focused || ref.current?.value || props.defaultValue
   const filled = variant === 'filled'
 
   return (
@@ -59,7 +59,7 @@ export function TextField({
             onBlur?.(e)
           }}
           className={clsx(
-            'text-on-surface h-full rounded-t bg-transparent pr-4 focus:outline-none',
+            'text-on-surface h-full w-full rounded-t bg-transparent pr-4 focus:outline-none',
             Icon ? 'pl-12' : 'pl-4',
             filled && 'hover:bg-on-surface/hover pt-6 pb-2',
             className,

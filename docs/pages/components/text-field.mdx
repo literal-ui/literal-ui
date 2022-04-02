@@ -5,6 +5,7 @@ desc: TextField component
 
 import { TextField } from '@literal-ui/core'
 import { MdSearch } from 'react-icons/md'
+import { useState } from 'react'
 
 export const selecteds = [false, true]
 
@@ -32,4 +33,42 @@ export const selecteds = [false, true]
 
 ```tsx
 <TextField variant={variant} name={variant} Icon={MdSearch} />
+```
+
+## `[controlled]: boolean{:ts}`
+
+export const Controlled = () => {
+  const [value, setValue] = useState('')
+  return (
+    <TextField
+      variant="filled"
+      name="controlled"
+      onChange={(e) => setValue(e.target.value)}
+      value={value}
+      message={`value: ${value}`}
+    />
+  )
+}
+
+<Demo>
+  <TextField variant="filled" name="uncontrolled" defaultValue="default" />
+  <Controlled />
+</Demo>
+
+```tsx
+const [value, setValue] = useState('')
+
+<TextField
+  variant="filled"
+  name="uncontrolled"
+  defaultValue="default"
+/>
+
+<TextField
+  variant="filled"
+  name="controlled"
+  onChange={(e) => setValue(e.target.value)}
+  value={value}
+  message={`value: ${value}`}
+/>
 ```
