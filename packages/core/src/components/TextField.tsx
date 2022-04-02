@@ -10,6 +10,7 @@ type TextFieldProps = ComponentProps<'input'> & {
   message?: string
   counter?: boolean
   Icon?: IconType
+  error?: boolean
 }
 export function TextField({
   variant,
@@ -20,6 +21,7 @@ export function TextField({
   counter,
   onFocus,
   onBlur,
+  error,
   ...props
 }: TextFieldProps) {
   const [focused, setFocused] = useState(false)
@@ -27,7 +29,7 @@ export function TextField({
 
   const hoist = focused || ref.current?.value || props.defaultValue
   const filled = variant === 'filled'
-  const disabled = props.disabled
+  const { disabled } = props
 
   return (
     <div className={disabled ? 'text-on-disabled' : 'text-on-surface-variant'}>
@@ -41,7 +43,8 @@ export function TextField({
             {
               'left-12': Icon,
               'left-4': !Icon,
-              'text-primary': focused,
+              'text-error': error,
+              'text-primary': !error && focused,
               'top-4': !hoist,
               'scale-75': hoist,
               'top-2': hoist && filled,
@@ -82,20 +85,24 @@ export function TextField({
             className={clsx('absolute inset-0 -z-50', 'rounded-t', {
               'bg-disabled': disabled,
               'bg-surface-variant': !disabled,
-              'border-primary border-b-2': focused,
+              'border-b-2': focused,
               'border-b': !focused,
-              'border-on-disabled': !focused && disabled,
-              'border-on-surface': !focused && !disabled,
+              'border-error': error,
+              'border-primary': !error && focused,
+              'border-on-disabled': !error && !focused && disabled,
+              'border-on-surface': !error && !focused && !disabled,
             })}
           ></div>
         ) : (
           <fieldset
             className={clsx('absolute inset-0 -z-50', '-top-1 rounded px-2.5', {
-              'border-primary border-2': focused,
+              'border-2': focused,
               border: !focused,
-              'border-disabled': !focused && disabled,
+              'border-error': error,
+              'border-primary': !error && focused,
+              'border-disabled': !error && !focused && disabled,
               'group-hover:border-on-surface border-outline':
-                !focused && !disabled,
+                !error && !focused && !disabled,
             })}
           >
             <legend className="typescale-body-small h-2">
@@ -108,7 +115,7 @@ export function TextField({
       </div>
       {(message || counter) && (
         <div className="typescale-body-small mt-1 flex justify-between px-4">
-          <div>{message}</div>
+          <div className={clsx(error && 'text-error')}>{message}</div>
           <div>{counter}</div>
         </div>
       )}

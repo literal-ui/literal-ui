@@ -97,3 +97,30 @@ const [value, setValue] = useState('')
   disabled
 />
 ```
+
+## `error?: boolean{:ts}`
+
+<Demo>
+  {TextField.variants.map((variant, i) => (
+    <TextField
+      key={i}
+      variant={variant}
+      name={variant}
+      Icon={MdSearch}
+      defaultValue="default"
+      message="error"
+      error
+    />
+  ))}
+</Demo>
+
+```tsx
+<TextField
+  variant={variant}
+  name={variant}
+  Icon={MdSearch}
+  defaultValue="default"
+  message="error"
+  error
+/>
+```
