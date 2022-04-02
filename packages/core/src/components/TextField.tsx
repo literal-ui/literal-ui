@@ -27,20 +27,26 @@ export function TextField({
 
   const hoist = focused || ref.current?.value || props.defaultValue
   const filled = variant === 'filled'
+  const disabled = props.disabled
 
   return (
-    <div className="text-on-surface-variant">
+    <div className={disabled ? 'text-on-disabled' : 'text-on-surface-variant'}>
       <div className="typescale-body-large group relative flex h-14 items-center">
         {Icon && <Icon size={20} className="absolute -z-10 ml-3" />}
         <label
           htmlFor={name}
           className={clsx(
-            'pointer-events-none absolute origin-top-left select-none transition-all',
-            Icon ? 'left-12' : 'left-4',
-            focused && 'text-primary',
-            hoist
-              ? clsx('scale-75', filled ? 'top-2' : '-top-2 !left-4')
-              : 'top-4',
+            'pointer-events-none absolute select-none',
+            'origin-top-left transition-all',
+            {
+              'left-12': Icon,
+              'left-4': !Icon,
+              'text-primary': focused,
+              'top-4': !hoist,
+              'scale-75': hoist,
+              'top-2': hoist && filled,
+              '-top-2 !left-4': hoist && !filled,
+            },
           )}
         >
           {name}
@@ -59,32 +65,38 @@ export function TextField({
             onBlur?.(e)
           }}
           className={clsx(
-            'text-on-surface h-full w-full rounded-t bg-transparent pr-4 focus:outline-none',
-            Icon ? 'pl-12' : 'pl-4',
-            filled && 'hover:bg-on-surface/hover pt-6 pb-2',
+            'h-full w-full rounded-t bg-transparent pr-4 focus:outline-none',
+            {
+              'pl-12': Icon,
+              'pl-4': !Icon,
+              'text-on-surface': !disabled,
+              'pt-6 pb-2': filled,
+              'hover:bg-on-surface/hover': filled && !disabled,
+            },
             className,
           )}
           {...props}
         />
         {filled ? (
           <div
-            className={clsx(
-              'absolute inset-0 -z-50',
-              'bg-surface-variant rounded-t',
-              focused
-                ? 'border-primary border-b-2'
-                : 'border-on-surface border-b',
-            )}
+            className={clsx('absolute inset-0 -z-50', 'rounded-t', {
+              'bg-disabled': disabled,
+              'bg-surface-variant': !disabled,
+              'border-primary border-b-2': focused,
+              'border-b': !focused,
+              'border-on-disabled': !focused && disabled,
+              'border-on-surface': !focused && !disabled,
+            })}
           ></div>
         ) : (
           <fieldset
-            className={clsx(
-              'absolute inset-0 -z-50',
-              '-top-1 rounded px-2.5',
-              focused
-                ? 'border-primary border-2'
-                : 'group-hover:border-on-surface border-outline border',
-            )}
+            className={clsx('absolute inset-0 -z-50', '-top-1 rounded px-2.5', {
+              'border-primary border-2': focused,
+              border: !focused,
+              'border-disabled': !focused && disabled,
+              'group-hover:border-on-surface border-outline':
+                !focused && !disabled,
+            })}
           >
             <legend className="typescale-body-small h-2">
               <span className={clsx('px-1', hoist ? 'opacity-0' : 'hidden')}>

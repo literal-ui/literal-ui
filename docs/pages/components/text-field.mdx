@@ -72,3 +72,28 @@ const [value, setValue] = useState('')
   message={`value: ${value}`}
 />
 ```
+
+## `disabled?: boolean{:ts}`
+
+<Demo>
+  {TextField.variants.map((variant, i) => (
+    <TextField
+      key={i}
+      variant={variant}
+      name={variant}
+      Icon={MdSearch}
+      defaultValue="default"
+      disabled
+    />
+  ))}
+</Demo>
+
+```tsx
+<TextField
+  variant={variant}
+  name={variant}
+  Icon={MdSearch}
+  defaultValue="default"
+  disabled
+/>
+```
