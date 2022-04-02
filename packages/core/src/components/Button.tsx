@@ -2,10 +2,11 @@ import clsx from 'clsx'
 import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 
+import { classes } from '../classes'
+import { WithRenderAs } from '../types'
+import { keys } from '../utils'
+
 import { StateLayer } from './StateLayer'
-import { classes } from './classes'
-import { WithRenderAs } from './types'
-import { keys } from './utils'
 
 const variantMap = {
   filled: ['bg-primary text-on-primary', 'bg-disabled'],

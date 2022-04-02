@@ -3,9 +3,10 @@ import { ComponentProps, ElementType } from 'react'
 import { IconType } from 'react-icons'
 import { MdCheck, MdClose } from 'react-icons/md'
 
+import { classes } from '../classes'
+import { WithRenderAs } from '../types'
+
 import { StateLayer } from './StateLayer'
-import { classes } from './classes'
-import { WithRenderAs } from './types'
 
 type ChipOwnProps = {
   selected?: boolean

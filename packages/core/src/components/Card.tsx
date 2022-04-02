@@ -1,9 +1,10 @@
 import clsx from 'clsx'
 import { ComponentPropsWithoutRef } from 'react'
 
+import { classes } from '../classes'
+import { keys } from '../utils'
+
 import { StateLayer } from './StateLayer'
-import { classes } from './classes'
-import { keys } from './utils'
 
 const variantMap = {
   elevated: 'bg-surface shadow-1',
