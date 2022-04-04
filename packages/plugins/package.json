@@ -2,19 +2,31 @@
   "name": "@literal-ui/plugins",
   "version": "0.0.2",
   "license": "MIT",
+  "description": "",
+  "keywords": [],
+  "author": "pacexy <pacexy@gmail.com>",
+  "homepage": "https://github.com/literal-ui/literal-ui#readme",
+  "bugs": "https://github.com/literal-ui/literal-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literal-ui/literal-ui.git",
+    "directory": "packages/plugins"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "esmo ../../scripts/build.ts"
+    "build": "rimraf dist && esno ../../scripts/build.ts"
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "@types/tailwindcss": "^3.0.9"
-  },
-  "dependencies": {
+    "@types/tailwindcss": "^3.0.9",
     "tailwindcss": "^3.0.23"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
   }
 }

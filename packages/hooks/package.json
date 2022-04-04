@@ -2,21 +2,35 @@
   "name": "@literal-ui/hooks",
   "version": "0.0.3",
   "license": "MIT",
+  "description": "",
+  "keywords": [],
+  "author": "pacexy <pacexy@gmail.com>",
+  "homepage": "https://github.com/literal-ui/literal-ui#readme",
+  "bugs": "https://github.com/literal-ui/literal-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literal-ui/literal-ui.git",
+    "directory": "packages/hooks"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "esmo ../../scripts/build.ts"
+    "build": "rimraf dist && esno ../../scripts/build.ts"
   },
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "use-local-storage-state": "^16.0.1"
+  },
   "devDependencies": {
     "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11"
+    "@types/react-dom": "^17.0.11",
+    "react": "17.0.2"
   },
-  "dependencies": {
-    "react": "17.0.2",
-    "use-local-storage-state": "^16.0.1"
+  "peerDependencies": {
+    "react": ">=16.9.0"
   }
 }

@@ -2,24 +2,38 @@
   "name": "@literal-ui/core",
   "version": "0.0.5",
   "license": "MIT",
+  "description": "",
+  "keywords": [],
+  "author": "pacexy <pacexy@gmail.com>",
+  "homepage": "https://github.com/literal-ui/literal-ui#readme",
+  "bugs": "https://github.com/literal-ui/literal-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literal-ui/literal-ui.git",
+    "directory": "packages/core"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "esmo ../../scripts/build.ts"
+    "build": "rimraf dist && esno ../../scripts/build.ts"
   },
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11"
-  },
   "dependencies": {
     "@literal-ui/hooks": "workspace:*",
     "clsx": "^1.1.1",
-    "react": "17.0.2",
-    "react-icons": "^4.3.1",
     "type-fest": "^2.12.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "react": "17.0.2",
+    "react-icons": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-icons": ">=4.1.0"
   }
 }
