@@ -9,9 +9,8 @@ const opts = {
 }
 
 const withTM = require('next-transpile-modules')([
-  '../packages/core',
-  '../packages/hooks',
-  '../packages/plugins',
+  '@literal-ui/core',
+  '@literal-ui/hooks',
 ])
 
 /**

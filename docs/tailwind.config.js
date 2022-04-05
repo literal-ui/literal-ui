@@ -12,6 +12,6 @@ module.exports = {
   },
   plugins: [
     require('m3-tokens/tailwind')({ source: '#00ff00' }),
-    require('../packages/plugins'),
+    require('@literal-ui/plugins'),
   ],
 }
