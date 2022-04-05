@@ -4,9 +4,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "release": "pnpm -r publish --access public",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "release": "pnpm -r publish --access public",
     "prepare": "husky install"
   },
   "lint-staged": {
