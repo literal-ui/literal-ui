@@ -1,5 +1,14 @@
 # @literal-ui/core
 
+## 0.0.6
+
+### Patch Changes
+
+- [`1b59a0f`](https://github.com/literal-ui/literal-ui/commit/1b59a0f6e35c64990158727b4b9847d169228744) Thanks [@pacexy](https://github.com/pacexy)! - Fix peer deps
+
+- Updated dependencies [[`1b59a0f`](https://github.com/literal-ui/literal-ui/commit/1b59a0f6e35c64990158727b4b9847d169228744)]:
+  - @literal-ui/hooks@0.0.4
+
 ## 0.0.5
 
 ### Patch Changes
