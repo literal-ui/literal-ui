@@ -8,8 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@literal-ui/core": "workspace:*",
-    "@literal-ui/hooks": "workspace:*",
     "@mdx-js/loader": "^2.1.0",
     "@mdx-js/react": "^2.1.0",
     "clsx": "^1.1.1",

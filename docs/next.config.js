@@ -1,3 +1,5 @@
+const { join } = require('path')
+
 /**
  * @type {import('rehype-pretty-code').Options}
  **/
@@ -9,8 +11,8 @@ const opts = {
 }
 
 const withTM = require('next-transpile-modules')([
-  '@literal-ui/core',
-  '@literal-ui/hooks',
+  join(__dirname, '../packages/core'),
+  join(__dirname, '../packages/hooks'),
 ])
 
 /**
