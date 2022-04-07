@@ -36,7 +36,7 @@ export function TextField({
   const _value = touched ? ref.current?.value : defaultValue || value
   // `defaultValue` and `value` maybe number (includes 0)
   const hasValue = !['', undefined].includes(_value as any)
-  const hoist = focused || hasValue
+  const shrink = focused || hasValue
   const filled = variant === 'filled'
 
   return (
@@ -53,10 +53,10 @@ export function TextField({
               'left-4': !Icon,
               'text-error': error,
               'text-primary': !error && focused,
-              'top-4': !hoist,
-              'scale-75': hoist,
-              'top-2': hoist && filled,
-              '-top-2 !left-4': hoist && !filled,
+              'top-4': !shrink,
+              'scale-75': shrink,
+              'top-2': shrink && filled,
+              '-top-2 !left-4': shrink && !filled,
             },
           )}
         >
@@ -114,7 +114,7 @@ export function TextField({
             })}
           >
             <legend className="typescale-body-small h-2">
-              <span className={clsx('px-1', hoist ? 'opacity-0' : 'hidden')}>
+              <span className={clsx('px-1', shrink ? 'opacity-0' : 'hidden')}>
                 {name}
               </span>
             </legend>
