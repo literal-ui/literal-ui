@@ -1,0 +1,70 @@
+---
+title: Menu
+---
+
+import { Menu, Divider } from '@literal-ui/core'
+import { MdCheck } from 'react-icons/md'
+
+export const selecteds = [false, true]
+
+# `import { Menu } from '@literal-ui/core'{:ts}`
+
+## `Menu.Item{:ts}`
+
+<Demo>
+  <Menu className="w-32">
+    <Menu.Item>Copy</Menu.Item>
+    <Menu.Item>Paste</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item>Log out</Menu.Item>
+  </Menu>
+</Demo>
+
+```tsx
+<Menu className="w-32">
+  <Menu.Item>Copy</Menu.Item>
+  <Menu.Item>Paste</Menu.Item>
+  <Menu.Divider />
+  <Menu.Item>Log out</Menu.Item>
+</Menu>
+```
+
+## `trailing?: string{:ts}`
+
+<Demo>
+  <Menu>
+    <Menu.Item trailing="Ctrl + C">Copy</Menu.Item>
+    <Menu.Item trailing="Ctrl + V">Paste</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item>Log out</Menu.Item>
+  </Menu>
+</Demo>
+
+```tsx
+<Menu>
+  <Menu.Item trailing="Ctrl + C">Copy</Menu.Item>
+  <Menu.Item trailing="Ctrl + V">Paste</Menu.Item>
+  <Menu.Divider />
+  <Menu.Item>Log out</Menu.Item>
+</Menu>
+```
+
+## `Icon?: IconType{:ts}`
+
+<Demo>
+  <Menu className="w-40">
+    <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+    <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+  </Menu>
+</Demo>
+
+```tsx
+<Menu className="w-40">
+  <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+  <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+  <Menu.Divider />
+  <Menu.Item Icon={MdCheck}>Item</Menu.Item>
+</Menu>
+```

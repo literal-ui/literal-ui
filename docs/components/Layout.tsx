@@ -21,6 +21,7 @@ const blocks = [
       'filter-chip',
       'suggestion-chip',
       'text-field',
+      'menu',
       'navigation-bar',
       'navigation-drawer',
       'top-app-bar',

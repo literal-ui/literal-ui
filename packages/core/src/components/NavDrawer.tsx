@@ -10,6 +10,7 @@ import { MdMenuOpen, MdMenu } from 'react-icons/md'
 import { useMediaQuery } from '@literal-ui/hooks'
 
 import { IconButton } from './Button'
+import { Divider } from './Divider'
 import { Overlay } from './Overlay'
 import { useLiteralConfig } from './Provider'
 import { StateLayer } from './StateLayer'
@@ -40,7 +41,7 @@ export const NavDrawer: React.FC<NavDrawerProps> & {
         style={{ height: `calc(100vh - 64px)` }}
         {...props}
       >
-        <WithDivider divider={<hr className="border-surface-variant my-4" />}>
+        <WithDivider divider={<Divider className="my-4" />}>
           {children}
         </WithDivider>
       </nav>
