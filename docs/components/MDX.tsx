@@ -41,3 +41,33 @@ export function withLayout({ title, desc }: Meta) {
     )
   } as React.FC
 }
+
+export function Demo({ className, ...props }: ComponentProps<'div'>) {
+  return (
+    <div
+      className={clsx(
+        'relative my-4 flex flex-wrap justify-center gap-4',
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+export function Screen({
+  className,
+  children,
+  ...props
+}: ComponentProps<'div'>) {
+  return (
+    <div
+      className={clsx(
+        'shadow-1 relative z-0 mx-auto my-4 h-80 max-w-xl resize overflow-y-scroll',
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}

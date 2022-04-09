@@ -6,12 +6,13 @@ import type { AppProps } from 'next/app'
 
 import { LiteralProvider } from '@literal-ui/core'
 
-import { Demo, H1, H2, Layout } from '../components'
+import { Demo, H1, H2, Layout, Screen } from '../components'
 
 const components: MDXComponents = {
   h1: H1,
   h2: H2,
   Demo,
+  Screen,
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {

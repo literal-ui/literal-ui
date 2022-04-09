@@ -1,0 +1,117 @@
+---
+title: AppShell
+---
+
+import {
+  AppShell,
+  ColorScheme,
+  IconButton,
+  NavBar,
+  NavDrawer,
+  TopAppBar,
+} from '@literal-ui/core'
+import { RiGithubFill } from 'react-icons/ri'
+import { MdCheck } from 'react-icons/md'
+
+export const placeholder = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+`
+
+# `import { AppShell } from '@literal-ui/core'{:ts}`
+
+## `header?: ReactNode{:ts}`
+
+<Screen>
+  <AppShell
+    className="mx-auto max-w-3xl p-4"
+    header={
+      <TopAppBar
+        headline={<TopAppBar.Title>Headline</TopAppBar.Title>}
+        trailing={
+          <TopAppBar.Trailing>
+            <IconButton Icon={RiGithubFill} />
+          </TopAppBar.Trailing>
+        }
+      />
+    }
+  >
+    {placeholder}
+  </AppShell>
+</Screen>
+
+```tsx
+<AppShell
+  className="mx-auto max-w-3xl p-4"
+  header={
+    <TopAppBar
+      headline={<TopAppBar.Title>Headline</TopAppBar.Title>}
+      trailing={
+        <TopAppBar.Trailing>
+          <IconButton Icon={RiGithubFill} />
+        </TopAppBar.Trailing>
+      }
+    />
+  }
+>
+  {placeholder}
+</AppShell>
+```
+
+## `navbar?: ReactNode{:ts}`
+
+<Screen>
+  <AppShell
+    className="mx-auto max-w-3xl p-4"
+    header={
+      <TopAppBar
+        headline={<TopAppBar.Title>Headline</TopAppBar.Title>}
+        trailing={
+          <TopAppBar.Trailing>
+            <IconButton Icon={RiGithubFill} />
+          </TopAppBar.Trailing>
+        }
+      />
+    }
+    navbar={
+      <NavBar>
+        {[...Array(4)].map((_, i) => (
+          <NavBar.Item key={i} Icon={MdCheck} active={!i}>
+            <div>Label</div>
+          </NavBar.Item>
+        ))}
+      </NavBar>
+    }
+  >
+    {placeholder}
+  </AppShell>
+</Screen>
+
+```tsx
+<AppShell
+  className="mx-auto max-w-3xl p-4"
+  header={
+    <TopAppBar
+      headline={<TopAppBar.Title>Headline</TopAppBar.Title>}
+      trailing={
+        <TopAppBar.Trailing>
+          <IconButton Icon={RiGithubFill} />
+        </TopAppBar.Trailing>
+      }
+    />
+  }
+  navbar={
+    <NavBar>
+      {[...Array(4)].map((_, i) => (
+        <NavBar.Item key={i} Icon={MdCheck} active={!i}>
+          <div>Label</div>
+        </NavBar.Item>
+      ))}
+    </NavBar>
+  }
+>
+  {placeholder}
+</AppShell>
+```
+
+## `sidebar?: ReactNode{:ts}`
+
+Think of docs as an example.

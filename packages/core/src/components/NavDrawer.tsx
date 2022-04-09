@@ -35,15 +35,13 @@ export const NavDrawer: React.FC<NavDrawerProps> & {
       <nav
         className={clsx(
           open === undefined ? 'hidden sm:block' : open ? 'block' : 'hidden',
-          'bg-surface fixed top-16 z-20 w-60 px-7 sm:sticky',
+          'bg-surface fixed top-16 z-20 w-60 overflow-y-auto overscroll-contain px-7 sm:sticky',
           className,
         )}
         style={{ height: `calc(100vh - 64px)` }}
         {...props}
       >
-        <WithDivider divider={<Divider className="my-4" />}>
-          {children}
-        </WithDivider>
+        <WithDivider divider={<Divider />}>{children}</WithDivider>
       </nav>
 
       {open && sm === false && <Overlay onClick={toggle} />}
@@ -62,8 +60,10 @@ export const Block: React.FC<BlockProps> = ({
 }) => {
   return (
     <div className={clsx('text-on-surface-variant', className)} {...props}>
-      {headline && <h1 className="typescale-title-small my-4">{headline}</h1>}
-      <menu className="typescale-label-large -mx-4 space-y-1">{children}</menu>
+      {headline && <h1 className="typescale-title-small mt-3">{headline}</h1>}
+      <menu className="typescale-label-large -mx-4 space-y-1 py-3">
+        {children}
+      </menu>
     </div>
   )
 }

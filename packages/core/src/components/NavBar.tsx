@@ -10,10 +10,7 @@ export const NavBar: React.FC<NavBarProps> & {
 } = ({ className, ...props }) => {
   return (
     <menu
-      className={clsx(
-        'bg-surface sticky bottom-0 flex w-screen sm:hidden',
-        className,
-      )}
+      className={clsx('bg-surface sticky bottom-0 flex w-full', className)}
       {...props}
     />
   )
