@@ -1,5 +1,13 @@
 # @literal-ui/core
 
+## 0.0.8
+
+### Patch Changes
+
+- [`f59f3fa`](https://github.com/literal-ui/literal-ui/commit/f59f3fa99b770bd9c81c18e84abb3a18f101fcee) Thanks [@pacexy](https://github.com/pacexy)! - refactor(NavDrawer): rename `Block` to `Section`
+
+* [`c4c72bf`](https://github.com/literal-ui/literal-ui/commit/c4c72bf056a7fde844625a2131e4ab0c8f280ab0) Thanks [@pacexy](https://github.com/pacexy)! - fix(AppShell): wrong height
+
 ## 0.0.7
 
 ### Patch Changes
