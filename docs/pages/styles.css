@@ -15,5 +15,5 @@ code[data-theme='light'] {
 }
 
 pre > code {
-  @apply bg-surface1 rounded-lg p-4;
+  @apply bg-surface1 my-6 rounded-lg p-4;
 }

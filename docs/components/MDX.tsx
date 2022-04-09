@@ -62,7 +62,7 @@ export function Screen({
   return (
     <div
       className={clsx(
-        'shadow-1 relative z-0 mx-auto my-4 h-80 max-w-xl resize overflow-y-scroll',
+        'shadow-1 relative z-0 mx-auto my-4 h-80 min-w-min max-w-xl resize overflow-y-scroll',
         className,
       )}
       {...props}
