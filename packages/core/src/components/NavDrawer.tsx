@@ -17,11 +17,7 @@ import { StateLayer } from './StateLayer'
 import { WithDivider } from './WithDivider'
 
 interface NavDrawerProps extends ComponentPropsWithoutRef<'nav'> {}
-export const NavDrawer: React.FC<NavDrawerProps> & {
-  Toggler: typeof Toggler
-  Block: typeof Block
-  Item: typeof Item
-} = ({ className, children, ...props }) => {
+export function NavDrawer({ className, children, ...props }: NavDrawerProps) {
   const { nav } = useLiteralConfig()
   const { open, toggle } = nav ?? {}
   const sm = useMediaQuery('(min-width: 640px)')
@@ -49,10 +45,10 @@ export const NavDrawer: React.FC<NavDrawerProps> & {
   )
 }
 
-interface BlockProps extends ComponentPropsWithoutRef<'div'> {
+interface SectionProps extends ComponentPropsWithoutRef<'div'> {
   headline?: string
 }
-export const Block: React.FC<BlockProps> = ({
+export const Section: React.FC<SectionProps> = ({
   className,
   headline,
   children,
@@ -97,6 +93,6 @@ const Toggler: React.FC = () => {
   return <IconButton Icon={open ? MdMenuOpen : MdMenu} onClick={toggle} />
 }
 
-NavDrawer.Block = Block
+NavDrawer.Section = Section
 NavDrawer.Item = Item
 NavDrawer.Toggler = Toggler

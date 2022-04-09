@@ -5,9 +5,7 @@ import { IconType } from 'react-icons'
 import { StateLayer } from './StateLayer'
 
 interface NavBarProps extends ComponentPropsWithoutRef<'menu'> {}
-export const NavBar: React.FC<NavBarProps> & {
-  Item: typeof Item
-} = ({ className, ...props }) => {
+export function NavBar({ className, ...props }: NavBarProps) {
   return (
     <menu
       className={clsx('bg-surface sticky bottom-0 flex w-full', className)}

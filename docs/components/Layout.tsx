@@ -67,7 +67,7 @@ export const Layout: React.FC = ({ children }) => {
       sidebar={
         <NavDrawer>
           {blocks.map(({ name, items }) => (
-            <NavDrawer.Block key={name} headline={fmt(name)}>
+            <NavDrawer.Section key={name} headline={fmt(name)}>
               {items.map((item) => {
                 const path = `/${name}/${item}`
                 return (
@@ -76,7 +76,7 @@ export const Layout: React.FC = ({ children }) => {
                   </NavDrawer.Item>
                 )
               })}
-            </NavDrawer.Block>
+            </NavDrawer.Section>
           ))}
         </NavDrawer>
       }

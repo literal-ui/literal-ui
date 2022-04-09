@@ -6,11 +6,13 @@ interface TopAppBarProps extends ComponentPropsWithoutRef<'header'> {
   headline?: React.ReactNode
   trailing?: React.ReactNode
 }
-export const TopAppBar: React.FC<TopAppBarProps> & {
-  Leading: typeof Leading
-  Title: typeof Title
-  Trailing: typeof Trailing
-} = ({ className, leading, headline, trailing, ...props }) => {
+export function TopAppBar({
+  className,
+  leading,
+  headline,
+  trailing,
+  ...props
+}: TopAppBarProps) {
   return (
     <header
       className={clsx(
