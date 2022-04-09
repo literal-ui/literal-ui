@@ -8,8 +8,7 @@ import {
   NavDrawer,
   TopAppBar,
 } from '@literal-ui/core'
-
-import { Link } from './Link'
+import { Link } from '@literal-ui/next'
 
 const blocks = [
   {

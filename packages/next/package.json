@@ -1,0 +1,38 @@
+{
+  "name": "@literal-ui/next",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "",
+  "keywords": [],
+  "author": "pacexy <pacexy@gmail.com>",
+  "homepage": "https://github.com/literal-ui/literal-ui#readme",
+  "bugs": "https://github.com/literal-ui/literal-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literal-ui/literal-ui.git",
+    "directory": "packages/next"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rimraf dist && esno ../../scripts/build.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "type-fest": "^2.12.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "next": "12.1.0",
+    "react": "17.0.2"
+  },
+  "peerDependencies": {
+    "next": ">=12.0.0",
+    "react": ">=16.9.0"
+  }
+}

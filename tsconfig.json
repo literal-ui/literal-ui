@@ -17,6 +17,7 @@
     "paths": {
       "@literal-ui/core": ["./packages/core/src/index.ts"],
       "@literal-ui/hooks": ["./packages/hooks/src/index.ts"],
+      "@literal-ui/next": ["./packages/next/src/index.ts"],
       "@literal-ui/plugins": ["./packages/plugins/src/index.ts"]
     }
   },

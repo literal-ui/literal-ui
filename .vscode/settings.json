@@ -1,7 +1,9 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "exportall.config.folderListener": [
+    "/docs/components",
     "/packages/core/src/components",
-    "/docs/components"
+    "/packages/next/src/components",
+    "/packages/next/src/hooks"
   ]
 }

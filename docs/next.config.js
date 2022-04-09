@@ -13,6 +13,7 @@ const opts = {
 const withTM = require('next-transpile-modules')([
   join(__dirname, '../packages/core'),
   join(__dirname, '../packages/hooks'),
+  join(__dirname, '../packages/next'),
 ])
 
 /**

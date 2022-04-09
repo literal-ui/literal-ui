@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import { ComponentPropsWithoutRef, forwardRef } from 'react'
 import { Merge } from 'type-fest'
@@ -49,7 +48,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     <NextLink {...linkProps}>
       <a
         ref={ref}
-        className={clsx(className)}
+        className={className}
         {...(external && propsForExternalLink)}
         {...anchorProps}
       >
