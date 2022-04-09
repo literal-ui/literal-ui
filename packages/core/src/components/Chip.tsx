@@ -4,7 +4,7 @@ import { IconType } from 'react-icons'
 import { MdCheck, MdClose } from 'react-icons/md'
 
 import { classes } from '../classes'
-import { WithRenderAs } from '../types'
+import { WithAs } from '../types'
 
 import { StateLayer } from './StateLayer'
 
@@ -14,9 +14,9 @@ type ChipOwnProps = {
   Icon?: IconType
   onDelete?: () => void
 }
-type ChipProps<T> = WithRenderAs<T> & ChipOwnProps
+type ChipProps<T> = WithAs<T> & ChipOwnProps
 function Chip<T extends ElementType = 'button'>({
-  renderAs,
+  as,
   children,
   selected = false,
   elevated = false,
@@ -25,7 +25,7 @@ function Chip<T extends ElementType = 'button'>({
   onDelete,
   ...props
 }: ChipProps<T>) {
-  const Renderer = renderAs || 'button'
+  const Renderer = as || 'button'
   const TrailingIcon = onDelete ? MdClose : null
   const { disabled } = props
   const outlined = !selected && !elevated
@@ -79,7 +79,7 @@ export const AssistChip: React.FC<AssistChipProps> = ({ ...props }) => {
   return <Chip {...props} />
 }
 
-export type FilterChipProps<T> = WithRenderAs<T> &
+export type FilterChipProps<T> = WithAs<T> &
   Pick<ChipOwnProps, 'selected' | 'elevated'>
 export function FilterChip<T extends ElementType = 'button'>({
   ...props

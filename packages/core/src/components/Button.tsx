@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 
 import { classes } from '../classes'
-import { WithRenderAs } from '../types'
+import { WithAs } from '../types'
 import { keys } from '../utils'
 
 import { StateLayer } from './StateLayer'
@@ -16,19 +16,19 @@ const variantMap = {
   tonal: ['bg-secondary-container text-on-secondary-container', 'bg-disabled'],
 }
 
-export type ButtonProps<T> = WithRenderAs<T> & {
+export type ButtonProps<T> = WithAs<T> & {
   variant: keyof typeof variantMap
   Icon?: IconType
 }
 export function Button<T extends ElementType = 'button'>({
-  renderAs,
+  as,
   children,
   className,
   variant,
   Icon,
   ...props
 }: ButtonProps<T>) {
-  const Renderer = renderAs || 'button'
+  const Renderer = as || 'button'
   const [enabledStyle, disabledStyle] = variantMap[variant]
   const isText = variant === 'text'
 
@@ -53,16 +53,16 @@ export function Button<T extends ElementType = 'button'>({
 }
 Button.variants = keys(variantMap)
 
-export type IconButtonProps<T> = WithRenderAs<T> & {
+export type IconButtonProps<T> = WithAs<T> & {
   Icon?: IconType
 }
 export function IconButton<T extends ElementType = 'button'>({
-  renderAs,
+  as,
   className,
   Icon,
   ...restProps
 }: IconButtonProps<T>) {
-  const Renderer = renderAs || 'button'
+  const Renderer = as || 'button'
   const { disabled } = restProps
 
   return (

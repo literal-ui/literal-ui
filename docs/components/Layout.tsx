@@ -55,7 +55,7 @@ export const Layout: React.FC = ({ children }) => {
           trailing={
             <TopAppBar.Trailing>
               <IconButton
-                renderAs={Link}
+                as={Link}
                 href="https://github.com/literal-ui/literal-ui"
                 Icon={RiGithubFill}
               />

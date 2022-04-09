@@ -5,7 +5,7 @@ import { Merge } from 'type-fest'
 // Extending HTML elements in React and TypeScript while preserving props
 // See: https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase#wrappingmirroring
 export interface LinkProps
-  extends Merge<ComponentPropsWithoutRef<'a'>, NextLinkProps> {}
+  extends Merge<ComponentPropsWithoutRef<'a'>, Omit<NextLinkProps, 'as'>> {}
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   props,
@@ -13,7 +13,6 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 ) {
   const {
     href,
-    as,
     replace,
     scroll,
     shallow,
@@ -27,7 +26,6 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
   const linkProps = {
     href,
-    as,
     replace,
     scroll,
     shallow,
