@@ -21,7 +21,7 @@ export const AppShell: React.FC<AppShellProps> = ({
       <div className="flex" style={{ minHeight: `calc(100% - 64px)` }}>
         {sidebar}
         <div className={clsx('flex flex-1 flex-col')}>
-          <main className={clsx('flex-1', className)}>{children}</main>
+          <main className={clsx('w-screen flex-1', className)}>{children}</main>
           {navbar}
         </div>
       </div>
