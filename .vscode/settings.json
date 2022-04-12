@@ -3,6 +3,7 @@
   "exportall.config.folderListener": [
     "/docs/components",
     "/packages/core/src/components",
+    "/packages/hooks/src",
     "/packages/next/src/components",
     "/packages/next/src/hooks"
   ]

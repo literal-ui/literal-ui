@@ -22,7 +22,7 @@ export function Card({ className, variant, children, ...props }: CardProps) {
       className={clsx(
         'rounded-xl p-4',
         variantMap[variant],
-        interactive && 'relative cursor-pointer overflow-hidden',
+        interactive && 'relative cursor-pointer',
         className,
       )}
       {...props}

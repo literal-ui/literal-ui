@@ -35,7 +35,7 @@ export function Button<T extends ElementType = 'button'>({
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative select-none overflow-hidden rounded-full py-2.5',
+        'typescale-label-large relative select-none rounded-full py-2.5',
         isText ? 'px-4' : 'px-6',
         Icon && 'inline-flex items-center',
         props.disabled ? clsx('text-on-disabled', disabledStyle) : enabledStyle,
@@ -60,21 +60,20 @@ export function IconButton<T extends ElementType = 'button'>({
   as,
   className,
   Icon,
-  ...restProps
+  ...props
 }: IconButtonProps<T>) {
   const Renderer = as || 'button'
-  const { disabled } = restProps
 
   return (
     <Renderer
       className={clsx(
-        'relative overflow-hidden rounded-full p-2',
-        disabled ? 'text-on-disabled' : 'text-on-surface-variant',
+        'relative rounded-full p-2',
+        props.disabled ? 'text-on-disabled' : 'text-on-surface-variant',
         className,
       )}
-      {...restProps}
+      {...props}
     >
-      {disabled || <StateLayer />}
+      {props.disabled || <StateLayer />}
       {Icon ? <Icon size={24} /> : null}
     </Renderer>
   )

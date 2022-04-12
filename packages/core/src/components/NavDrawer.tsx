@@ -73,7 +73,7 @@ const Item: React.FC<ItemProps> = ({ children, active = false, ...props }) => {
       ...children.props,
       className: clsx(
         children.props.className,
-        'flex items-center h-10 px-6 relative overflow-hidden rounded-full',
+        'relative flex items-center h-10 px-6 rounded-full',
         active && 'text-on-secondary-container bg-secondary-container',
       ),
       children: (

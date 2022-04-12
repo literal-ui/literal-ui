@@ -32,7 +32,7 @@ const Item: React.FC<ItemProps> = ({
   ...props
 }) => {
   return (
-    <li className={clsx('relative overflow-hidden', className)} {...props}>
+    <li className={clsx('relative', className)} {...props}>
       <StateLayer />
       <div
         className={clsx(

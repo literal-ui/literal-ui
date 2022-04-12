@@ -29,7 +29,7 @@ const Item: React.FC<ItemProps> = ({
       ...children.props,
       className: clsx(
         children.props.className,
-        'relative overflow-hidden flex flex-col items-center pt-3 pb-4 text-on-surface-variant',
+        'relative flex flex-col items-center pt-3 pb-4 text-on-surface-variant',
       ),
       children: (
         <>

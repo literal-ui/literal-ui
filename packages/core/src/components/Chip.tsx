@@ -32,7 +32,7 @@ function Chip<T extends ElementType = 'button'>({
   return (
     <Renderer
       className={clsx(
-        'typescale-label-large relative select-none overflow-hidden rounded-lg px-4 py-1.5',
+        'typescale-label-large relative select-none rounded-lg px-4 py-1.5',
         (Icon || TrailingIcon) && 'inline-flex items-center',
         outlined && classes.outlined,
         disabled
@@ -56,7 +56,7 @@ function Chip<T extends ElementType = 'button'>({
           <span
             role="button"
             tabIndex={0}
-            className="absolute right-1 h-[26px] w-[26px] overflow-hidden rounded-full"
+            className="absolute right-1 h-[26px] w-[26px] rounded-full"
             onClick={onDelete}
           >
             <StateLayer />
