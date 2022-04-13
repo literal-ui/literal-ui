@@ -1,5 +1,11 @@
 # @literal-ui/next
 
+## 0.0.2
+
+### Patch Changes
+
+- [`2f25c36`](https://github.com/literal-ui/literal-ui/commit/2f25c369a5a662f7517f752d31e17e3fe6f2cb1d) Thanks [@pacexy](https://github.com/pacexy)! - fix: remove `module` field
+
 ## 0.0.1
 
 ### Patch Changes
