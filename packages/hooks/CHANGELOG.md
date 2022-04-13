@@ -1,5 +1,11 @@
 # @literal-ui/hooks
 
+## 0.0.6
+
+### Patch Changes
+
+- [`0d396ea`](https://github.com/literal-ui/literal-ui/commit/0d396eac88c7afcc9da7bbfb25847a618c5eed0e) Thanks [@pacexy](https://github.com/pacexy)! - Upgrade React to 18
+
 ## 0.0.5
 
 ### Patch Changes
