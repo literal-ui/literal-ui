@@ -1,5 +1,16 @@
 # @literal-ui/core
 
+## 0.0.10
+
+### Patch Changes
+
+- [`0d396ea`](https://github.com/literal-ui/literal-ui/commit/0d396eac88c7afcc9da7bbfb25847a618c5eed0e) Thanks [@pacexy](https://github.com/pacexy)! - fix(StateLayer): ripple is not triggered in React 18
+
+* [`0d396ea`](https://github.com/literal-ui/literal-ui/commit/0d396eac88c7afcc9da7bbfb25847a618c5eed0e) Thanks [@pacexy](https://github.com/pacexy)! - Upgrade React to 18
+
+* Updated dependencies [[`0d396ea`](https://github.com/literal-ui/literal-ui/commit/0d396eac88c7afcc9da7bbfb25847a618c5eed0e)]:
+  - @literal-ui/hooks@0.0.6
+
 ## 0.0.9
 
 ### Patch Changes
