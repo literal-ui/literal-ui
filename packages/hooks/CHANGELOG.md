@@ -1,5 +1,11 @@
 # @literal-ui/hooks
 
+## 0.0.5
+
+### Patch Changes
+
+- [`615be43`](https://github.com/literal-ui/literal-ui/commit/615be43b72bc81ddfd981ec9b3517f0bdac1963d) Thanks [@pacexy](https://github.com/pacexy)! - refactor(StateLayer): add `pointer-events-none`
+
 ## 0.0.4
 
 ### Patch Changes

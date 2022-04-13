@@ -1,5 +1,16 @@
 # @literal-ui/core
 
+## 0.0.9
+
+### Patch Changes
+
+- [`320e71f`](https://github.com/literal-ui/literal-ui/commit/320e71fa4660d6a83090a6eca7f2e9fff846933c) Thanks [@pacexy](https://github.com/pacexy)! - add `PolymorphicProps`
+
+* [`615be43`](https://github.com/literal-ui/literal-ui/commit/615be43b72bc81ddfd981ec9b3517f0bdac1963d) Thanks [@pacexy](https://github.com/pacexy)! - refactor(StateLayer): add `pointer-events-none`
+
+* Updated dependencies [[`615be43`](https://github.com/literal-ui/literal-ui/commit/615be43b72bc81ddfd981ec9b3517f0bdac1963d)]:
+  - @literal-ui/hooks@0.0.5
+
 ## 0.0.8
 
 ### Patch Changes
