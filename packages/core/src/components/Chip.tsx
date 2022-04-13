@@ -4,7 +4,7 @@ import { IconType } from 'react-icons'
 import { MdCheck, MdClose } from 'react-icons/md'
 
 import { classes } from '../classes'
-import { WithAs } from '../types'
+import { PolymorphicProps } from '../types'
 
 import { StateLayer } from './StateLayer'
 
@@ -14,7 +14,7 @@ type ChipOwnProps = {
   Icon?: IconType
   onDelete?: () => void
 }
-type ChipProps<T> = WithAs<T> & ChipOwnProps
+type ChipProps<T extends ElementType> = PolymorphicProps<ChipOwnProps, T>
 function Chip<T extends ElementType = 'button'>({
   as,
   children,
@@ -79,8 +79,11 @@ export const AssistChip: React.FC<AssistChipProps> = ({ ...props }) => {
   return <Chip {...props} />
 }
 
-export type FilterChipProps<T> = WithAs<T> &
-  Pick<ChipOwnProps, 'selected' | 'elevated'>
+export type FilterChipOwnProps = Pick<ChipOwnProps, 'selected' | 'elevated'>
+export type FilterChipProps<T extends ElementType> = PolymorphicProps<
+  FilterChipOwnProps,
+  T
+>
 export function FilterChip<T extends ElementType = 'button'>({
   ...props
 }: FilterChipProps<T>) {

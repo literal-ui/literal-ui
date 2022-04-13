@@ -3,7 +3,7 @@ import { ElementType } from 'react'
 import { IconType } from 'react-icons'
 
 import { classes } from '../classes'
-import { WithAs } from '../types'
+import { PolymorphicProps } from '../types'
 import { keys } from '../utils'
 
 import { StateLayer } from './StateLayer'
@@ -16,10 +16,14 @@ const variantMap = {
   tonal: ['bg-secondary-container text-on-secondary-container', 'bg-disabled'],
 }
 
-export type ButtonProps<T> = WithAs<T> & {
+export type ButtonOwnProps = {
   variant: keyof typeof variantMap
   Icon?: IconType
 }
+export type ButtonProps<T extends ElementType> = PolymorphicProps<
+  ButtonOwnProps,
+  T
+>
 export function Button<T extends ElementType = 'button'>({
   as,
   children,
@@ -53,9 +57,14 @@ export function Button<T extends ElementType = 'button'>({
 }
 Button.variants = keys(variantMap)
 
-export type IconButtonProps<T> = WithAs<T> & {
+export type IconButtonOwnProps = {
   Icon?: IconType
 }
+export type IconButtonProps<T extends ElementType> = PolymorphicProps<
+  IconButtonOwnProps,
+  T
+>
+
 export function IconButton<T extends ElementType = 'button'>({
   as,
   className,
