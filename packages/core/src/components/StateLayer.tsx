@@ -1,16 +1,17 @@
 import clsx from 'clsx'
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 import { useEventListener, useHover, usePress } from '@literal-ui/hooks'
 
 export const StateLayer: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null)
+  const parent = useCallback(() => ref.current?.parentElement, [])
 
-  const hovered = useHover(() => ref.current?.parentElement)
-  const pressed = usePress(() => ref.current?.parentElement)
+  const hovered = useHover(parent)
+  const pressed = usePress(parent)
 
   useEventListener(
-    () => ref.current?.parentElement,
+    parent,
     'mousedown',
     // https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
     (e) => {
