@@ -10,11 +10,14 @@ export const WithDivider: React.FC<WithDividerProps> = ({
 }) => {
   return (
     <>
-      {React.Children.toArray(children).reduce((acc, cur) => (
-        <>
-          {acc} {divider} {cur}
-        </>
-      ))}
+      {React.Children.toArray(children).reduce(
+        (acc, cur) => (
+          <>
+            {acc} {divider} {cur}
+          </>
+        ),
+        <></>,
+      )}
     </>
   )
 }
