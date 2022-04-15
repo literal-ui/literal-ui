@@ -17,7 +17,7 @@ const components: MDXComponents = {
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <LiteralProvider>
+    <LiteralProvider options={{ ripple: true }}>
       <MDXProvider components={components}>
         <Layout>
           <Component {...pageProps} />

@@ -12,13 +12,13 @@ import { useMediaQuery } from '@literal-ui/hooks'
 import { IconButton } from './Button'
 import { Divider } from './Divider'
 import { Overlay } from './Overlay'
-import { useLiteralConfig } from './Provider'
+import { useLiteralContext } from './Provider'
 import { StateLayer } from './StateLayer'
 import { WithDivider } from './WithDivider'
 
 interface NavDrawerProps extends ComponentPropsWithoutRef<'nav'> {}
 export function NavDrawer({ className, children, ...props }: NavDrawerProps) {
-  const { nav } = useLiteralConfig()
+  const { nav } = useLiteralContext()
   const { open, toggle } = nav ?? {}
   const sm = useMediaQuery('(min-width: 640px)')
 
@@ -88,7 +88,7 @@ const Item: React.FC<ItemProps> = ({ children, active = false, ...props }) => {
 }
 
 const Toggler: React.FC = () => {
-  const { nav } = useLiteralConfig()
+  const { nav } = useLiteralContext()
   const { open, toggle } = nav ?? {}
   return <IconButton Icon={open ? MdMenuOpen : MdMenu} onClick={toggle} />
 }

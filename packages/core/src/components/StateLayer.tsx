@@ -3,9 +3,12 @@ import { useCallback, useRef } from 'react'
 
 import { useEventListener, useHover, usePress } from '@literal-ui/hooks'
 
+import { useLiteralContext } from './Provider'
+
 export const StateLayer: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null)
   const parent = useCallback(() => ref.current?.parentElement, [])
+  const { ripple: enabled } = useLiteralContext()
 
   const hovered = useHover(parent)
   const pressed = usePress(parent)
@@ -15,6 +18,8 @@ export const StateLayer: React.FC = () => {
     'mousedown',
     // https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
     (e) => {
+      if (!enabled) return
+
       e.stopPropagation()
 
       const parent = ref.current?.parentElement

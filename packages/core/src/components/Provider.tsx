@@ -1,26 +1,33 @@
 import { createContext, useContext } from 'react'
+import { PartialDeep } from 'type-fest'
 
 import { useBoolean } from '@literal-ui/hooks'
 
-type LiteralContext = {
+type LiteralContext = PartialDeep<{
+  ripple: boolean
   nav: {
-    open?: boolean
+    open: boolean
     toggle: (v?: any) => void
   }
-}
-const Context = createContext<Partial<LiteralContext>>({})
+}>
+const Context = createContext<LiteralContext>({})
 
-interface ProviderProps {}
-export const LiteralProvider: React.FC<ProviderProps> = ({ children }) => {
+interface ProviderProps {
+  options?: LiteralContext
+}
+export const LiteralProvider: React.FC<ProviderProps> = ({
+  children,
+  options,
+}) => {
   const [open, toggle] = useBoolean()
 
   return (
-    <Context.Provider value={{ nav: { open, toggle } }}>
+    <Context.Provider value={{ nav: { open, toggle }, ...options }}>
       {children}
     </Context.Provider>
   )
 }
 
-export function useLiteralConfig() {
+export function useLiteralContext() {
   return useContext(Context)
 }
