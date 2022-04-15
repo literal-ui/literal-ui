@@ -1,5 +1,13 @@
 # @literal-ui/core
 
+## 0.0.11
+
+### Patch Changes
+
+- [`bae4784`](https://github.com/literal-ui/literal-ui/commit/bae47843535c48b2a8fa27e99c7088f470403639) Thanks [@pacexy](https://github.com/pacexy)! - Fix reduce of empty array
+
+* [`de9094e`](https://github.com/literal-ui/literal-ui/commit/de9094e52625edbae7ead41221ba1e5d8e67f17e) Thanks [@pacexy](https://github.com/pacexy)! - Support disable `ripple`
+
 ## 0.0.10
 
 ### Patch Changes
