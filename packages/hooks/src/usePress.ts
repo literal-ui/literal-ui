@@ -1,18 +1,16 @@
 import { useState } from 'react'
 
-import { Listenable, MayCallable } from './types'
+import { Maybe, MayCallable } from './types'
 import { useEventListener } from './useEventListener'
 
-export function usePress<L extends Listenable>(
-  listenable: MayCallable<L | undefined | null>,
-) {
+export function usePress<T extends EventTarget>(target: MayCallable<Maybe<T>>) {
   const [pressed, setPressed] = useState(false)
 
-  useEventListener(listenable, 'mousedown', () => {
+  useEventListener(target, 'mousedown', () => {
     setPressed(true)
   })
 
-  useEventListener(listenable, 'mouseup', () => {
+  useEventListener('mouseup', () => {
     setPressed(false)
   })
 

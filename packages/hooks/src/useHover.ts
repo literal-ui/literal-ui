@@ -1,18 +1,16 @@
 import { useState } from 'react'
 
-import { Listenable, MayCallable } from './types'
+import { Maybe, MayCallable } from './types'
 import { useEventListener } from './useEventListener'
 
-export function useHover<L extends Listenable>(
-  listenable: MayCallable<L | undefined | null>,
-) {
+export function useHover<T extends EventTarget>(target: MayCallable<Maybe<T>>) {
   const [hovered, setHovered] = useState(false)
 
-  useEventListener(listenable, 'mouseenter', () => {
+  useEventListener(target, 'mouseenter', () => {
     setHovered(true)
   })
 
-  useEventListener(listenable, 'mouseleave', () => {
+  useEventListener(target, 'mouseleave', () => {
     setHovered(false)
   })
 
