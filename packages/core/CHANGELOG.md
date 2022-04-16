@@ -1,5 +1,14 @@
 # @literal-ui/core
 
+## 0.0.12
+
+### Patch Changes
+
+- [`e41c075`](https://github.com/literal-ui/literal-ui/commit/e41c0750571d6adbbcd514515151cbb828da8c26) Thanks [@pacexy](https://github.com/pacexy)! - Remove initial element in `<WithDivider`>
+
+- Updated dependencies [[`9d3c248`](https://github.com/literal-ui/literal-ui/commit/9d3c2487b18fdc29480175132e34802282465905)]:
+  - @literal-ui/hooks@0.0.7
+
 ## 0.0.11
 
 ### Patch Changes

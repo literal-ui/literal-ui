@@ -1,5 +1,11 @@
 # @literal-ui/hooks
 
+## 0.0.7
+
+### Patch Changes
+
+- [`9d3c248`](https://github.com/literal-ui/literal-ui/commit/9d3c2487b18fdc29480175132e34802282465905) Thanks [@pacexy](https://github.com/pacexy)! - fix(usePress): `mouseup` not triggered
+
 ## 0.0.6
 
 ### Patch Changes
