@@ -8,16 +8,16 @@ export const WithDivider: React.FC<WithDividerProps> = ({
   children,
   divider,
 }) => {
+  const childrenArray = React.Children.toArray(children)
+  if (childrenArray.length === 0) return null
+
   return (
     <>
-      {React.Children.toArray(children).reduce(
-        (acc, cur) => (
-          <>
-            {acc} {divider} {cur}
-          </>
-        ),
-        <></>,
-      )}
+      {childrenArray.reduce((acc, cur) => (
+        <>
+          {acc} {divider} {cur}
+        </>
+      ))}
     </>
   )
 }
