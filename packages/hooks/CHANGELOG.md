@@ -1,5 +1,11 @@
 # @literal-ui/hooks
 
+## 0.0.8
+
+### Patch Changes
+
+- 9b58d48: fix: dark flash
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @literal-ui/core
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [9b58d48]
+  - @literal-ui/hooks@0.0.8
+
 ## 0.0.12
 
 ### Patch Changes
