@@ -19,7 +19,8 @@ export function useColorScheme() {
   }, [dark, setScheme])
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
+    if (dark !== undefined)
+      document.documentElement.classList.toggle('dark', dark)
   }, [dark])
 
   return { scheme, toggle }
