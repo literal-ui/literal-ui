@@ -38,7 +38,7 @@ const blocks = [
 const fmt = (name: string) =>
   name.replace(/-/g, ' ').replace(/^(\w)/, (s) => s.toUpperCase())
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const router = useRouter()
 
   return (

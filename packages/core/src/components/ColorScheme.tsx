@@ -4,7 +4,7 @@ import { useColorScheme } from '@literal-ui/hooks'
 
 import { IconButton } from './Button'
 
-export const ColorScheme: React.FC = () => {
+export const ColorScheme: React.FC<React.PropsWithChildren> = () => {
   const { toggle } = useColorScheme()
 
   return (
@@ -23,7 +23,7 @@ export const ColorScheme: React.FC = () => {
   )
 }
 
-export const PreventFlash: React.FC = () => {
+export const PreventFlash: React.FC<React.PropsWithChildren> = () => {
   const setColorScheme = () => {
     const mql = window.matchMedia('(prefers-color-scheme: dark)')
     const scheme = localStorage.getItem('literal-color-scheme')

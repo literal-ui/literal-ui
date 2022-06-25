@@ -39,7 +39,7 @@ export function withLayout({ title, desc }: Meta) {
         <article>{children}</article>
       </>
     )
-  } as React.FC
+  } as React.FC<React.PropsWithChildren>
 }
 
 export function Demo({ className, ...props }: ComponentProps<'div'>) {

@@ -23,12 +23,12 @@
     "dist"
   ],
   "dependencies": {
-    "use-local-storage-state": "^16.0.1"
+    "use-local-storage-state": "^18.1.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "react": "18.0.0"
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "react": "18.2.0"
   },
   "peerDependencies": {
     "react": ">=16.9.0"

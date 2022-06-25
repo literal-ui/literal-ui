@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
-interface WithDividerProps {
+interface WithDividerProps extends PropsWithChildren {
   divider: React.ReactNode
 }
 

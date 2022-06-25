@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
-interface AppShellProps {
+interface AppShellProps extends PropsWithChildren {
   className?: string
   header?: ReactNode
   sidebar?: ReactNode

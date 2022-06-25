@@ -5,7 +5,7 @@ import { useEventListener, useHover, usePress } from '@literal-ui/hooks'
 
 import { useLiteralContext } from './Provider'
 
-export const StateLayer: React.FC = () => {
+export const StateLayer: React.FC<React.PropsWithChildren> = () => {
   const ref = useRef<HTMLDivElement>(null)
   const parent = useCallback(() => ref.current?.parentElement, [])
   const { ripple: enabled } = useLiteralContext()

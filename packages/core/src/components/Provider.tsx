@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react'
+import { createContext, PropsWithChildren, useContext } from 'react'
 import { PartialDeep } from 'type-fest'
 
 import { useBoolean } from '@literal-ui/hooks'
@@ -12,7 +12,7 @@ type LiteralContext = PartialDeep<{
 }>
 const Context = createContext<LiteralContext>({})
 
-interface ProviderProps {
+interface ProviderProps extends PropsWithChildren {
   options?: LiteralContext
 }
 export const LiteralProvider: React.FC<ProviderProps> = ({

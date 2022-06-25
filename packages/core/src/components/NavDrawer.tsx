@@ -87,7 +87,7 @@ const Item: React.FC<ItemProps> = ({ children, active = false, ...props }) => {
   return <li {...props}>{children}</li>
 }
 
-const Toggler: React.FC = () => {
+const Toggler: React.FC<React.PropsWithChildren> = () => {
   const { nav } = useLiteralContext()
   const { open, toggle } = nav ?? {}
   return <IconButton Icon={open ? MdMenuOpen : MdMenu} onClick={toggle} />

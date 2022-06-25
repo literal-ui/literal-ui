@@ -8,7 +8,6 @@ type TColorScheme = 'light' | 'dark'
 export function useColorScheme() {
   const [scheme, setScheme] = useLocalStorageState<TColorScheme>(
     'literal-color-scheme',
-    { ssr: true },
   )
 
   const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')
