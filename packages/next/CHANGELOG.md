@@ -1,5 +1,11 @@
 # @literal-ui/next
 
+## 0.0.4
+
+### Patch Changes
+
+- [`7d854c8`](https://github.com/literal-ui/literal-ui/commit/7d854c8bd450297921939d6d7cf0e19ac38033e0) Thanks [@pacexy](https://github.com/pacexy)! - chore: bump to @types/react@18
+
 ## 0.0.3
 
 ### Patch Changes
